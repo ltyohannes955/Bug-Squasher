@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
@@ -18,14 +19,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/':(context) => intro(),
-        '/login':(context) => login(),
-        '/signUp':(context) => signUp(),
-        '/setup':(context) => setup(),
-        '/profile':(context) => profile(),
-        '/edit_card':(context) => edit_card(),
+        '/': (context) => intro(),
+        '/login': (context) => login(),
+        '/signUp': (context) => signUp(),
+        '/setup': (context) => setup(),
+        '/profile': (context) => profile(),
+        '/edit_card': (context) => edit_card(),
+        '/category': (context) => Category(),
       },
     );
   }
 }
-
