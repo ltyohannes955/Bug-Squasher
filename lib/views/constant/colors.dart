@@ -1,4 +1,3 @@
 import 'package:flutter/material.dart';
-class color{
-  
-}
+
+const Color blue  = Color.fromARGB(248, 10, 17, 121);
