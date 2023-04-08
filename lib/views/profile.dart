@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constant/colors.dart';
+
 
 class profile extends StatefulWidget {
   const profile({super.key});
@@ -13,31 +15,29 @@ class _profileState extends State<profile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-          
-        //   actions: [
-            
-        //     IconButton(onPressed: (){}, icon: Icon(Icons.qr_code))
-        //   ],
-        // ),
         body: Column(
           children: [
             
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: Colors.purple, size: MediaQuery.of(context).size.width*.045,),),
+                  padding: const EdgeInsets.all(15.0),
+                  child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: blue, size: MediaQuery.of(context).size.width*.045,),),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: IconButton(onPressed: (){
+                    Navigator.pushNamed(context, '/setup');
+                      }, icon: Icon(Icons.qr_code, color: blue,size: MediaQuery.of(context).size.width*.045,)),
                 )
-                
                 
               ],
             ),
             Center(
               child: Text(
                 'Business cards',
-                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple, fontSize: MediaQuery.of(context).size.height*.055),)
+                style: TextStyle(fontWeight: FontWeight.bold, color: blue, fontSize: MediaQuery.of(context).size.height*.055),)
               ),
 
               Card(
@@ -96,24 +96,24 @@ class _profileState extends State<profile> {
                               TextSpan(text: 'ABC .PLC', style: TextStyle(color: Colors.grey))
                             ]
                           )),
-                          Row(
-                            children: [
-                              ElevatedButton(onPressed: (){
-                                Navigator.pushNamed(context, "");
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.purple,
-                                
-                              )
-                              , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.055),) ),
-                              SizedBox(width: 10,),
-
-                              IconButton(onPressed: (){
-                                Navigator.pushNamed(context, '/setup');
-                              }, icon: Icon(Icons.qr_code, color: Colors.purple,size: MediaQuery.of(context).size.width*.075,))
+                          
+                          
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ElevatedButton(onPressed: (){
+                              Navigator.pushNamed(context, "");
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: blue,
                               
-                            ],
-                          )
+                            )
+                            , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.04),) ),
+                          ),
                           
                         ],
                       )
