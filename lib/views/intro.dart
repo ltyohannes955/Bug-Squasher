@@ -1,14 +1,14 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class intro extends StatefulWidget {
-  const intro({super.key});
+class introPage extends StatefulWidget {
+  const introPage({super.key});
 
   @override
-  State<intro> createState() => _introState();
+  State<introPage> createState() => _introPageState();
 }
 
-class _introState extends State<intro> {
+class _introPageState extends State<introPage> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();

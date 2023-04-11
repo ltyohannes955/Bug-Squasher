@@ -1,14 +1,14 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class signUpscreen extends StatefulWidget {
+  const signUpscreen({super.key});
 
   @override
-  State<signUp> createState() => _signUpState();
+  State<signUpscreen> createState() => _signUpscreenState();
 }
 
-class _signUpState extends State<signUp> {
+class _signUpscreenState extends State<signUpscreen> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
