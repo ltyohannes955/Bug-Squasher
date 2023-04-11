@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
@@ -17,15 +18,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        '/':(context) => intro(),
-        '/login':(context) => login(),
-        '/signUp':(context) => signUp(),
-        '/setup':(context) => setup(),
-        '/profile':(context) => profile(),
-        '/edit_card':(context) => edit_card(),
-      },
-    );
+        debugShowCheckedModeBanner: false, home: const Contacts());
   }
 }
-
