@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-
-
 class introPage extends StatefulWidget {
   const introPage({super.key});
 
@@ -91,17 +89,16 @@ class _introPageState extends State<introPage> {
             padding: const EdgeInsets.only(bottom: 9.0),
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signup');
+                  Navigator.pushNamed(context, '/signUp');
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(MediaQuery.of(context) .size.width*.455, MediaQuery.of(context).size.height * .075, ),
                     primary: Color.fromARGB(255, 1, 11, 102),
                      
-  shape: 
-    RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(18.0),
-      
-    )
+                    shape: 
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    )
                 
 
                     ),

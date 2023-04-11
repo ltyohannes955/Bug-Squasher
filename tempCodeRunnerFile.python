@@ -1,0 +1,14 @@
+def in_order_iterative(self,root):
+    stack = []
+    New={}
+    currNode = root 
+    while(len(stack)!=0 or curNode != None ):
+        if (currNode != None):
+            stack.apped(currNode)
+            currNode = currNode.left
+        else:
+            top =stack[-1]
+            stack.pop()
+            New.append(top.data)
+            currNode = top.right
+        print(New)

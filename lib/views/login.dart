@@ -1,15 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class loginScreen extends StatefulWidget {
-  const loginScreen({super.key});
+class loginScreen extends StatelessWidget {
+  loginScreen({super.key});
 
-  @override
-  State<loginScreen> createState() => _loginScreenState();
-}
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text, password: passwordController.text);
+  }
 
-class _loginScreenState extends State<loginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +30,10 @@ class _loginScreenState extends State<loginScreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .055,
             ),
-            const TextField(
+            TextField(
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "User Email",
                   prefixIcon: Icon(
                     Icons.mail,
@@ -41,9 +43,10 @@ class _loginScreenState extends State<loginScreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .055,
             ),
-            const TextField(
+            TextField(
+              controller: passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "Password",
                   prefixIcon: Icon(
                     Icons.lock,
@@ -51,30 +54,31 @@ class _loginScreenState extends State<loginScreen> {
                   )),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * .055,
-            ),
-            Container(
-              width: double.infinity,
-              child: RawMaterialButton(
-                fillColor: Color.fromARGB(248, 10, 17, 121),
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                onPressed: () {},
-                child: const Text(
-                  "Login",
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
-                ),
-              ),
-            ),
+              height: MediaQuery.of(context).size.height * .055,),
+            GestureDetector(
+                onTap: () {
+                  signUserIn();},
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: const Color.fromARGB(248, 10, 17, 121)),
+                  child: const Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                    ),
+                  ),
+                )),
             SizedBox(
               height: MediaQuery.of(context).size.height * .055,
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signup');
+                  Navigator.pushNamed(context, '/signUp');
                 },
-                child: Text("Don't have an Account?Sign Up"))
+                child: const Text("Don't have an Account?Sign Up"))
           ],
         ),
       ),

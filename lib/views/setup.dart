@@ -1,16 +1,32 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class setup extends StatefulWidget {
-  const setup({super.key});
+class setup extends StatelessWidget {
+   setup({super.key});
 
-  @override
-  State<setup> createState() => _setupState();
-}
+  final user = FirebaseAuth.instance.currentUser!;
 
-class _setupState extends State<setup> {
+  void signout(){
+    FirebaseAuth.instance.signOut();
+  }
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      child: Row(
+        children: [
+          Center(child: 
+          Text('logged in as: '+ user.email! )),
+          IconButton(onPressed:
+            signout,
+           icon: Icon(Icons.logout))
+        ],
+      ),
+    );
   }
 }
