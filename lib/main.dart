@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
         '/setup':(context) => setup(),
         '/profile':(context) => profile(),
         '/edit_card':(context) => edit_card(),
+        '/catagorys': (context) => Category(),
+
       },
     );
   }
 }
-

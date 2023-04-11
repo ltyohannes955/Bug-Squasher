@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 
 class introPage extends StatefulWidget {
