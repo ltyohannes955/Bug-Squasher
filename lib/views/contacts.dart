@@ -13,9 +13,9 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: '#2B5B80'.toColor(),
+        backgroundColor: '#E5C5BD'.toColor(),
         appBar: AppBar(
-          backgroundColor: '#2B5B80'.toColor(),
+          backgroundColor: '#E5C5BD'.toColor(),
           elevation: 25,
           foregroundColor: Colors.white,
           title: const Text("Digital Business Card"),
@@ -151,7 +151,7 @@ class _ContactsState extends State<Contacts> {
           ],
         )),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: '#5E718B'.toColor(),
+          backgroundColor: '#E5C5BG'.toColor(),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
