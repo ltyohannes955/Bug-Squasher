@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
       routes: {
         '/':(context) => introPage(),
         '/login':(context) => loginScreen(),
