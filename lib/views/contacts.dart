@@ -80,7 +80,7 @@ class _ContactsState extends State<Contacts> {
                         ),
                       ],
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
                     Icons.lightbulb,
                     fill: BorderSide.strokeAlignCenter,
@@ -106,7 +106,17 @@ class _ContactsState extends State<Contacts> {
                     Icons.share,
                   ),
                 ),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    height: MediaQuery.of(context).size.width * 0.1,
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: const Icon(Icons.manage_accounts_sharp)),
               ],
+            ),
+            Row(
+              children: [b, c, d, e],
             ),
             const Text(
               "Popular",
