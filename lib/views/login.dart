@@ -21,8 +21,11 @@ class _loginScreenState extends State<loginScreen> {
     );
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text);
-      Navigator.pop(context);
+          email: emailController.text, password: passwordController.text
+          );
+          //pop the loading circle 
+
+          Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       // pop the loading circle
       Navigator.pop(context);
@@ -62,7 +65,7 @@ class _loginScreenState extends State<loginScreen> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Color.fromARGB(255, 136, 19, 54),
           title: Center(
             child: Text(
               'Incorrect Password',

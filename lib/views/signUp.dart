@@ -26,22 +26,10 @@ class _signUpscreenState extends State<signUpscreen> {
                 fontSize: MediaQuery.of(context).size.height * .055,
               ),
             ),
-            SizedBox(
+                       SizedBox(
               height: MediaQuery.of(context).size.height * .055,
             ),
-            const TextField(
-              keyboardType: TextInputType.name,
-              decoration: InputDecoration(
-                  hintText: "Full Name", 
-                  prefixIcon: Icon(
-                    Icons.account_circle_rounded,
-                    color: Colors.black,
-                  )                 
-                  )),
             
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .045,
-            ),
             const TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -66,6 +54,17 @@ class _signUpscreenState extends State<signUpscreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .045,
             ),
+            const TextField(
+              keyboardType: TextInputType.visiblePassword,
+              decoration: InputDecoration(
+                  hintText: "Comfirm password ", 
+                  prefixIcon: Icon(
+                    Icons.key,
+                    color: Colors.black,
+                  )                 
+                  )),
+                  SizedBox(
+              height: MediaQuery.of(context).size.height * .045,),
             Container(
               width: double.infinity,
               child: RawMaterialButton(
