@@ -30,6 +30,13 @@
             {
               "client_id": "597140137923-j8qa0u6kp1d3sid2uq166v8oq3a0ebif.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "597140137923-0r5kakqb99tkdjt3p0o3imjd1qq0vbdb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.digitalBusinessCard"
+              }
             }
           ]
         }
