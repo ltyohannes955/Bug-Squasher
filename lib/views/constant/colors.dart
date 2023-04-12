@@ -10,3 +10,4 @@ extension color on String {
     return Color(int.parse(buffer.toString(), radix: 16));
   }
 }
+const Color blue  = Color.fromARGB(248, 10, 17, 121);
