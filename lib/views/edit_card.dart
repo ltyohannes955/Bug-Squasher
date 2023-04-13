@@ -193,7 +193,9 @@ class _edit_cardState extends State<edit_card> {
                   Padding(
                     padding: const EdgeInsets.only(top: 20.0),
                     child: Center(
-                      child: ElevatedButton(onPressed: (){},
+                      child: ElevatedButton(onPressed: (){
+                        Navigator.pushNamed(context, '/profile');
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: blue,
                         

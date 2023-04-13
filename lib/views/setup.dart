@@ -191,12 +191,14 @@ class _setupState extends State<setup> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20,left: 280),
-                      child: ElevatedButton(onPressed: (){},
+                      child: ElevatedButton(onPressed: (){
+                        Navigator.pushNamed(context, '/catagory');
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: blue,
                         
                       ), 
-                      child: Text("Submit", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.05),)),
+                      child: Text("Submit", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.035),)),
                     )
                 ],)
               )

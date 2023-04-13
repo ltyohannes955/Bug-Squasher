@@ -73,7 +73,9 @@ class _signUpscreenState extends State<signUpscreen> {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/setup');
+                },
                 child: const Text(
                   "Sign Up",
                   style: TextStyle(color: Colors.white, fontSize: 18.0),

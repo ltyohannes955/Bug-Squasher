@@ -23,12 +23,14 @@ class _profileState extends State<profile> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: blue, size: MediaQuery.of(context).size.width*.045,),),
+                  child: IconButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, icon: Icon(Icons.arrow_back, color: blue, size: MediaQuery.of(context).size.width*.045,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: IconButton(onPressed: (){
-                    Navigator.pushNamed(context, '/setup');
+                    Navigator.pushNamed(context, '');
                       }, icon: Icon(Icons.qr_code, color: blue,size: MediaQuery.of(context).size.width*.045,)),
                 )
                 
@@ -106,7 +108,7 @@ class _profileState extends State<profile> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ElevatedButton(onPressed: (){
-                              Navigator.pushNamed(context, "");
+                              Navigator.pushNamed(context, "/edit_card");
                             },
                             style: ElevatedButton.styleFrom(
                               primary: blue,

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/setup':(context) => setup(),
         '/profile':(context) => profile(),
         '/edit_card':(context) => edit_card(),
-        '/catagorys': (context) => Category(),
+        '/catagory': (context) => Category(),
 
       },
     );

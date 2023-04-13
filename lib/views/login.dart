@@ -60,7 +60,9 @@ class _loginScreenState extends State<loginScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/catagory');
+                },
                 child: const Text(
                   "Login",
                   style: TextStyle(color: Colors.white, fontSize: 18.0),
@@ -72,7 +74,7 @@ class _loginScreenState extends State<loginScreen> {
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signup');
+                  Navigator.pushNamed(context, '/signUp');
                 },
                 child: Text("Don't have an Account?Sign Up"))
           ],
