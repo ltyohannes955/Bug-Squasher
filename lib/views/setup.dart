@@ -1,12 +1,28 @@
+
 import 'package:flutter/material.dart';
 
 import 'constant/colors.dart';
-class setup extends StatefulWidget {
-  const setup({super.key});
 
-  @override
-  State<setup> createState() => _setupState();
-}
+
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class setup extends StatelessWidget {
+  setup({super.key});
+
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signout() {
+    FirebaseAuth.instance.signOut();
+  }
+
 
 class _setupState extends State<setup> {
   int _val = 0;
@@ -204,6 +220,7 @@ class _setupState extends State<setup> {
               )
             ],
           ),
+
       ),
     );
   }
