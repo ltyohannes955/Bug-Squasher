@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +7,7 @@ class loginScreen extends StatefulWidget {
   @override
   State<loginScreen> createState() => _loginScreenState();
 }
+
 class _loginScreenState extends State<loginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -16,33 +15,27 @@ class _loginScreenState extends State<loginScreen> {
     showDialog(
       context: context,
       builder: (context) {
-        return const Center(child: CircularProgressIndicator());
+        return  Center(
+          child: CircularProgressIndicator(),
+        );
       },
     );
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text
-          );
-          //pop the loading circle 
+          email: emailController.text, password: passwordController.text);
+      // loading sign
 
-          Navigator.pop(context);
+      Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       // pop the loading circle
       Navigator.pop(context);
       // WRONG EMAIL
-      if (e.code == 'user-not-found') {
-        // show error to user
-        wrongEmailMessage();
-      }
-      // WRONG PASSWORD
-      else if (e.code == 'wrong-password') {
-        // show error to user
-        wrongPasswordMessage();
-      }
+      showErroMessage(e.code); 
     }
   }
+
   // wrong email message popup
-  void wrongEmailMessage() {
+  void showErroMessage(String message) {
     showDialog(
       context: context,
       builder: (context) {
@@ -58,6 +51,8 @@ class _loginScreenState extends State<loginScreen> {
       },
     );
   }
+
+   
 
   // wrong password message popup
   void wrongPasswordMessage() {
@@ -81,12 +76,13 @@ class _loginScreenState extends State<loginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.height * .030),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .155),
               Text(
                 "Log In",
                 style: TextStyle(
