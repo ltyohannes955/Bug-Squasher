@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
-extension color on String {
+extension ColorExtension on String {
   toColor() {
     var hexString = this;
     final buffer = StringBuffer();
@@ -10,4 +9,5 @@ extension color on String {
     return Color(int.parse(buffer.toString(), radix: 16));
   }
 }
-const Color blue  = Color.fromARGB(248, 10, 17, 121);
+
+const Color blue = Color.fromARGB(248, 10, 17, 121);

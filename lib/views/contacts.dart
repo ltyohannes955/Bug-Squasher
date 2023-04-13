@@ -13,9 +13,9 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: '#E5C5BD'.toColor(),
+        backgroundColor: "#CF786F".toColor(),
         appBar: AppBar(
-          backgroundColor: '#E5C5BD'.toColor(),
+          backgroundColor: "#EDBDAE".toColor(),
           elevation: 25,
           foregroundColor: Colors.white,
           title: const Text("Digital Business Card"),
@@ -40,7 +40,6 @@ class _ContactsState extends State<Contacts> {
             ),
             Card(
               elevation: 25,
-              color: '#FAF9F6'.toColor(),
               child: Column(
                 children: [
                   Container(
@@ -50,7 +49,7 @@ class _ContactsState extends State<Contacts> {
                     child: Row(
                       children: [
                         Image.asset(
-                          "lib/asset/jj.jpg",
+                          "assets/eagle.jpg",
                           fit: BoxFit.cover,
                           height: 200,
                           width: 130,
@@ -90,16 +89,31 @@ class _ContactsState extends State<Contacts> {
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
                     Icons.thumb_up,
+                    fill: BorderSide.strokeAlignCenter,
                   ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
@@ -110,6 +124,13 @@ class _ContactsState extends State<Contacts> {
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.width * 0.1,
                     decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 95, 92, 92),
+                            blurRadius: 0,
+                            spreadRadius: 2,
+                          ),
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: const Icon(Icons.manage_accounts_sharp)),
@@ -133,11 +154,10 @@ class _ContactsState extends State<Contacts> {
                   itemBuilder: (context, index) {
                     return Card(
                       elevation: 25,
-                      color: '#91ABC2'.toColor(),
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("lib/asset/jj.jpg"),
+                              image: AssetImage("assets/eagle.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius:
@@ -151,7 +171,7 @@ class _ContactsState extends State<Contacts> {
           ],
         )),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: '#E5C5BG'.toColor(),
+          backgroundColor: "#EDBDAE".toColor(),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
