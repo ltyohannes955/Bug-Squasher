@@ -154,8 +154,29 @@ class _signUpscreenState extends State<signUpscreen> {
                       ),
                     ),
                   )),
+
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .045,
+            ),
+            Container(
+              width: double.infinity,
+              child: RawMaterialButton(
+                fillColor: const Color.fromARGB(248, 4, 14, 146),
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/setup');
+                },
+                child: const Text(
+                  "Sign Up",
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * .055,
+
               ),
               TextButton(
                   onPressed: () {

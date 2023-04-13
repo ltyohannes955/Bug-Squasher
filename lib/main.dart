@@ -1,3 +1,5 @@
+import 'package:digital_business_card/views/contacts.dart';
+import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/auth_page.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
@@ -27,14 +29,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return MaterialApp(
-      
+        debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => introPage(),
-        '/login': (context) => AuthPage(),
-        '/signUp': (context) => signUpscreen(),
-        '/setup': (context) => setup(),
-        '/profile': (context) => profile(),
-        '/edit_card': (context) => edit_card(),
+        '/':(context) => introPage(),
+        '/login':(context) => loginScreen(),
+        '/signUp':(context) => signUpscreen(),
+        '/setup':(context) => setup(),
+        '/profile':(context) => profile(),
+        '/edit_card':(context) => edit_card(),
+        '/catagory': (context) => Category(),
       },
     );
   }

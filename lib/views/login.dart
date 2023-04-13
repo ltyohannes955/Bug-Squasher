@@ -134,16 +134,36 @@ class _loginScreenState extends State<loginScreen> {
                       ),
                     ),
                   )),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .055,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .055,
+            ),
+            Container(
+              width: double.infinity,
+              child: RawMaterialButton(
+                fillColor: Color.fromARGB(248, 10, 17, 121),
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/catagory');
+                },
+                child: const Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/signUp');
-                  },
-                  child: const Text("Don't have an Account?Sign Up"))
-            ],
-          ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .055,
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signUp');
+                },
+                child: Text("Don't have an Account?Sign Up"))
+          ],
+
         ),
       ),
     );
