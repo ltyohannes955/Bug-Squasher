@@ -8,23 +8,21 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class setup extends StatelessWidget {
-   setup({super.key});
+  setup({super.key});
 
   final user = FirebaseAuth.instance.currentUser!;
 
-  void signout(){
+  void signout() {
     FirebaseAuth.instance.signOut();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
         children: [
-          Center(child: 
-          Text('logged in as: '+ user.email! )),
-          IconButton(onPressed:
-            signout,
-           icon: Icon(Icons.logout))
+          Center(child: Text('logged in as: ' + user.email!)),
+          IconButton(onPressed: signout, icon: Icon(Icons.logout))
         ],
       ),
     );
