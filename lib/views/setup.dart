@@ -13,8 +13,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class setup extends StatelessWidget {
+class setup extends StatefulWidget {
   setup({super.key});
+
+  @override
+   State<setup> createState() => _setupState();
+}
 
 
   final user = FirebaseAuth.instance.currentUser!;

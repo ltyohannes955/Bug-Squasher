@@ -87,23 +87,39 @@ class Category extends StatelessWidget {
                   );
                 }),
           ),
-          BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                label: "Scanner",
-                icon: Icon(Icons.qr_code_scanner),
-              ),
-              BottomNavigationBarItem(
-                label: "Categories",
-                icon: Icon(Icons.book),
-              ),
-              BottomNavigationBarItem(
-                label: "Qr Codes",
-                icon: Icon(Icons.qr_code),
-              ),
-            ],
-          )
         ]),
+        drawer: Drawer(
+        child: ListView(children: [
+          Container(
+            color: Colors.blue,
+            height: 53,
+            child: Row(
+             children: const [
+                 Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.menu_sharp,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Menu',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Contacts');
+          }, child: Icon(Icons.home)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/catagory');
+          }, child: Icon(Icons.category_sharp)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Explor_page');
+          }, child: Icon(Icons.explore_sharp))
+        ]),
+      ),
       ),
     );
   }

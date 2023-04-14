@@ -50,7 +50,7 @@ class _ContactsState extends State<Contacts> {
                     child: Row(
                       children: [
                         Image.asset(
-                          "lib/asset/jj.jpg",
+                          "assets/a.jpg",
                           fit: BoxFit.cover,
                           height: 200,
                           width: 130,
@@ -137,7 +137,7 @@ class _ContactsState extends State<Contacts> {
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("lib/asset/jj.jpg"),
+                              image: AssetImage("assets/a.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius:
@@ -150,22 +150,37 @@ class _ContactsState extends State<Contacts> {
             )
           ],
         )),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: '#5E718B'.toColor(),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: '',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-                backgroundColor: Colors.purple)
-          ],
-        ));
+        drawer: Drawer(
+        child: ListView(children: [
+          Container(
+            color: Colors.blue,
+            height: 53,
+            child: Row(
+             children: const [
+                 Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.menu_sharp,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'Menu',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Contacts');
+          }, child: Icon(Icons.home)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/catagory');
+          }, child: Icon(Icons.category_sharp)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Explor_page');
+          }, child: Icon(Icons.explore_sharp))
+        ]),
+      ),);
   }
 }

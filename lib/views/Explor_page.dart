@@ -55,7 +55,7 @@ class _Explor_pageState extends State<Explor_page> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Image.asset(
-                          "assets/images/eagle.jpg",
+                          "assets/a.jpg",
                           fit: BoxFit.cover,
                           height: MediaQuery.of(context).size.height * 0.2,
                           width: MediaQuery.of(context).size.width * 0.3,
@@ -148,7 +148,7 @@ class _Explor_pageState extends State<Explor_page> {
                                           0.1,
                                       height:
                                           MediaQuery.of(context).size.width *
-                                              0.1,
+                                              0.09,
                                       decoration: const BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -177,9 +177,9 @@ class _Explor_pageState extends State<Explor_page> {
             color: Colors.blue,
             height: 53,
             child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+             children: const [
+                 Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.menu_sharp,
                     color: Colors.white,
@@ -192,9 +192,15 @@ class _Explor_pageState extends State<Explor_page> {
               ],
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: Icon(Icons.home)),
-          ElevatedButton(onPressed: () {}, child: Icon(Icons.category_sharp)),
-          ElevatedButton(onPressed: () {}, child: Icon(Icons.explore_sharp))
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Contacts');
+          }, child: Icon(Icons.home)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/catagory');
+          }, child: Icon(Icons.category_sharp)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Explor_page');
+          }, child: Icon(Icons.explore_sharp))
         ]),
       ),
     );

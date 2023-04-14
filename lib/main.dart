@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/Explor_page.dart';
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/auth_page.dart';
@@ -38,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/profile':(context) => profile(),
         '/edit_card':(context) => edit_card(),
         '/catagory': (context) => Category(),
+        '/Contacts': (context) => Contacts(),
+        '/Explor_page':(context) => Explor_page()
       },
     );
   }
