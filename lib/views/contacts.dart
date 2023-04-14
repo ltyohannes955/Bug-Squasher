@@ -1,4 +1,5 @@
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/setup.dart';
 import 'package:flutter/material.dart';
 import 'constant/text.dart';
 
@@ -179,7 +180,9 @@ class _ContactsState extends State<Contacts> {
           }, child: Icon(Icons.category_sharp)),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/Explor_page');
-          }, child: Icon(Icons.explore_sharp))
+          }, child: Icon(Icons.explore_sharp)),
+          const ElevatedButton(onPressed: signout,
+           child: Icon(Icons.logout_outlined))
         ]),
       ),);
   }
