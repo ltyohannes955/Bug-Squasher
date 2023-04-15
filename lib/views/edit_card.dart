@@ -17,6 +17,7 @@ class _edit_cardState extends State<edit_card> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
