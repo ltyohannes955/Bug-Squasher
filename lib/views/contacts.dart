@@ -192,10 +192,10 @@ class _ContactsState extends State<Contacts> {
           style: ElevatedButton.styleFrom(
             primary: '#2B5B80'.toColor(), // Background color
           ),
-           child: Icon(Icons.explore_sharp))
+           child: Icon(Icons.explore_sharp)),
 
-          }, child: Icon(Icons.explore_sharp)),
-          const ElevatedButton(onPressed: signout,
+          
+        ElevatedButton(onPressed: signout,
            child: Icon(Icons.logout_outlined))
 
          
