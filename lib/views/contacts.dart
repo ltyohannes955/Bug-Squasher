@@ -150,10 +150,10 @@ class _ContactsState extends State<Contacts> {
             )
           ],
         )),
-        drawer: Drawer(
+         drawer: Drawer(
         child: ListView(children: [
           Container(
-            color: Colors.blue,
+            color: '#2B5B80'.toColor(),
             height: 53,
             child: Row(
              children: const [
@@ -173,14 +173,27 @@ class _ContactsState extends State<Contacts> {
           ),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/Contacts');
-          }, child: Icon(Icons.home)),
+          },
+           style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+   child: Icon(Icons.home,)),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/catagory');
-          }, child: Icon(Icons.category_sharp)),
+          },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.category_sharp)),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/Explor_page');
-          }, child: Icon(Icons.explore_sharp))
+          },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.explore_sharp))
         ]),
-      ),);
+      ),
+      );
   }
 }

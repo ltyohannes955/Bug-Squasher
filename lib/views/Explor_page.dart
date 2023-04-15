@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,7 +15,7 @@ class _Explor_pageState extends State<Explor_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(248, 10, 17, 121),
+        backgroundColor: '#2B5B80'.toColor(),
         title: const Text(
           'DBC',
           style: TextStyle(
@@ -174,7 +175,7 @@ class _Explor_pageState extends State<Explor_page> {
       drawer: Drawer(
         child: ListView(children: [
           Container(
-            color: Colors.blue,
+            color: '#2B5B80'.toColor(),
             height: 53,
             child: Row(
              children: const [
@@ -194,13 +195,25 @@ class _Explor_pageState extends State<Explor_page> {
           ),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/Contacts');
-          }, child: Icon(Icons.home)),
+          },
+           style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+   child: Icon(Icons.home,)),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/catagory');
-          }, child: Icon(Icons.category_sharp)),
+          },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.category_sharp)),
           ElevatedButton(onPressed: () {
             Navigator.pushNamed(context, '/Explor_page');
-          }, child: Icon(Icons.explore_sharp))
+          },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.explore_sharp))
         ]),
       ),
     );
