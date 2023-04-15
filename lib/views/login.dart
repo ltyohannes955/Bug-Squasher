@@ -15,7 +15,7 @@ class _loginScreenState extends State<loginScreen> {
     showDialog(
       context: context,
       builder: (context) {
-        return  Center(
+        return  const Center(
           child: CircularProgressIndicator(),
         );
       },

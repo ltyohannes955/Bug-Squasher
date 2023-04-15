@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
 import 'package:digital_business_card/views/setup.dart';
@@ -16,7 +17,7 @@ class AuthPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return setup();
+            return Contacts();
           } else {
             return loginScreen();
           }
