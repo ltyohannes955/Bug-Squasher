@@ -68,6 +68,15 @@ class _setupState extends State<setup> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
+                    padding: const EdgeInsets.fromLTRB(10,10,0,0),
+                    child: Text('Full Name:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
+                  ), 
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Full Nmae",
+                    ),
+                  ),
+                    Padding(
                       padding: const EdgeInsets.fromLTRB(10,10,0,0),
                       child: Text('Work Area', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
                     ),

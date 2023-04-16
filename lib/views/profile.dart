@@ -101,16 +101,7 @@ class _profileState extends State<profile> {
                               TextSpan(text: 'ABC .PLC', style: TextStyle(color: Colors.grey))
                             ]
                           )),
-                          
-                          
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Row(
-                            children: [
-                              ElevatedButton(onPressed: (){
+                          ElevatedButton(onPressed: (){
                                 Navigator.pushNamed(context, "/edit_card");
                               },
                               style: ElevatedButton.styleFrom(
@@ -118,13 +109,10 @@ class _profileState extends State<profile> {
                                 
                               )
                               , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.04),) ),
-                            ],
-                          ),
-
                           
                           
                         ],
-                      )
+                      ),
                       
                     ],
                   ),

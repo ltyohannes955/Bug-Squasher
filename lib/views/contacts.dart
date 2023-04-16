@@ -1,5 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/setup.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import 'constant/text.dart';
 
@@ -15,19 +17,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: '#2B5B80'.toColor(),
-        appBar: AppBar(
-          backgroundColor: '#2B5B80'.toColor(),
-          elevation: 25,
-          foregroundColor: Colors.white,
-          title: const Text("Digital Business Card"),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: const Icon(Icons.account_circle_outlined))
-          ],
-        ),
+        appBar: MyAppbar(),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -151,57 +141,7 @@ class _ContactsState extends State<Contacts> {
             )
           ],
         )),
-         drawer: Drawer(
-        child: ListView(children: [
-          Container(
-            color: '#2B5B80'.toColor(),
-            height: 53,
-            child: Row(
-             children: const [
-                 Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.menu_sharp,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  'Menu',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/Contacts');
-          },
-           style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-   child: Icon(Icons.home,)),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/catagory');
-          },
-          style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-           child: Icon(Icons.category_sharp)),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/Explor_page');
-             },
-          style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-           child: Icon(Icons.explore_sharp)),
-
-          
-        ElevatedButton(onPressed: signout,
-           child: Icon(Icons.logout_outlined))
-
-         
-
-        ]),
-      ),
+         drawer: MyDrawer(),
       );
   }
 }
