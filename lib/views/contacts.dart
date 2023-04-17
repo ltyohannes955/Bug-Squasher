@@ -1,6 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'constant/text.dart';
+import 'package:digital_business_card/bloc/popular_bloc.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
@@ -50,7 +51,7 @@ class _ContactsState extends State<Contacts> {
                     child: Row(
                       children: [
                         Image.asset(
-                          "lib/asset/jj.jpg",
+                          "assets/tyss.jpg",
                           fit: BoxFit.cover,
                           height: 200,
                           width: 130,
@@ -81,9 +82,13 @@ class _ContactsState extends State<Contacts> {
                       ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: const Icon(
-                    Icons.lightbulb,
-                    fill: BorderSide.strokeAlignCenter,
+                  child: IconButton(
+                    icon: const Icon(Icons.lightbulb_circle),
+                    onPressed: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/catagorys');
+                      });
+                    },
                   ),
                 ),
                 Container(
@@ -116,7 +121,7 @@ class _ContactsState extends State<Contacts> {
               ],
             ),
             Row(
-              children: [b, c, d, e],
+              children: const [b, c, d, e],
             ),
             const Text(
               "Popular",
@@ -137,8 +142,8 @@ class _ContactsState extends State<Contacts> {
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("lib/asset/jj.jpg"),
-                              fit: BoxFit.cover,
+                              image: AssetImage("assets/tyss.jpg"),
+                              fit: BoxFit.cover,b
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
@@ -159,12 +164,12 @@ class _ContactsState extends State<Contacts> {
                 backgroundColor: Colors.black),
             BottomNavigationBarItem(
                 icon: Icon(Icons.business),
-                label: '',
+                label: 'management',
                 backgroundColor: Colors.black),
             BottomNavigationBarItem(
                 icon: Icon(Icons.school),
                 label: 'School',
-                backgroundColor: Colors.purple)
+                backgroundColor: Colors.black)
           ],
         ));
   }
