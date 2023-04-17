@@ -1,8 +1,8 @@
+import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-const bgColor = Color(0xfffafafa);
 
 class QRScanner extends StatefulWidget {
   const QRScanner({super.key});
@@ -23,9 +23,8 @@ class _QRScannerState extends State<QRScanner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgColor,
-      drawer: const Drawer(),
       appBar: AppBar(
+        backgroundColor: '#2B5B80'.toColor(),
         actions: [
           IconButton(onPressed: (){
             setState(() {
@@ -35,7 +34,6 @@ class _QRScannerState extends State<QRScanner> {
 
             }
           }, icon: const Icon(Icons.flash_on, color: Colors.grey,)),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.camera_front, color: Colors.grey,)),
         ],
         iconTheme: const IconThemeData(color: Colors.black87),
         centerTitle: true,

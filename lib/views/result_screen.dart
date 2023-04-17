@@ -1,4 +1,4 @@
-import 'package:digital_business_card/views/qr_scanner.dart';
+import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -11,7 +11,7 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgColor,
+      backgroundColor: '#2B5B80'.toColor(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
