@@ -18,12 +18,10 @@ class PopularBloc extends Bloc<PopularEvent, PopularState> {
       try {
         final activity = await _apiService.fetchActivity();
         await ((val) => {
-
+          
         });
         
-      }catch(e){
-
-      }
+      }catch(e){}
     });
   }
 }

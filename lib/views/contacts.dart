@@ -143,7 +143,7 @@ class _ContactsState extends State<Contacts> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage("assets/tyss.jpg"),
-                              fit: BoxFit.cover,b
+                              fit: BoxFit.cover,
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
