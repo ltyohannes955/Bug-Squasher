@@ -31,7 +31,6 @@ class _ContactsState extends State<Contacts> {
             ),
             Card(
               elevation: 25,
-              color: '#FAF9F6'.toColor(),
               child: Column(
                 children: [
                   Container(
@@ -81,16 +80,31 @@ class _ContactsState extends State<Contacts> {
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
                     Icons.thumb_up,
+                    fill: BorderSide.strokeAlignCenter,
                   ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
@@ -101,6 +115,13 @@ class _ContactsState extends State<Contacts> {
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.width * 0.1,
                     decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 95, 92, 92),
+                            blurRadius: 0,
+                            spreadRadius: 2,
+                          ),
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: const Icon(Icons.manage_accounts_sharp)),
@@ -124,7 +145,6 @@ class _ContactsState extends State<Contacts> {
                   itemBuilder: (context, index) {
                     return Card(
                       elevation: 25,
-                      color: '#91ABC2'.toColor(),
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(

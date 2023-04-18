@@ -5,6 +5,7 @@ import 'package:digital_business_card/auth_page.dart';
 import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
+import 'package:digital_business_card/views/personal.dart';
 import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       routes: {
         '/':(context) => AuthPage(),
         '/login':(context) => loginScreen(),
