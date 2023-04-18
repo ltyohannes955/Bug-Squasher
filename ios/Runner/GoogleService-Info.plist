@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>597140137923-0r5kakqb99tkdjt3p0o3imjd1qq0vbdb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.597140137923-0r5kakqb99tkdjt3p0o3imjd1qq0vbdb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDNARJjSHex5PHPvnqaSWFkXV1bz1UR_Dg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>597140137923</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.digitalBusinessCard</string>
+	<key>PROJECT_ID</key>
+	<string>digital-business-card-83a4a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>digital-business-card-83a4a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:597140137923:ios:97565a1fc0914020337f76</string>
+	<key>DATABASE_URL</key>
+	<string>https://digital-business-card-83a4a-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

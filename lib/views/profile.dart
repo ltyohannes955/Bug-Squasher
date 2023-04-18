@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/setup.dart';
 import 'package:flutter/material.dart';
 
 import 'constant/colors.dart';
@@ -15,6 +16,7 @@ class _profileState extends State<profile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: '#2B5B80'.toColor(),
         body: Column(
           children: [
             
@@ -23,13 +25,16 @@ class _profileState extends State<profile> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: blue, size: MediaQuery.of(context).size.width*.045,),),
+                  child: IconButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, icon: Icon(Icons.arrow_back, color: Colors.white, size: MediaQuery.of(context).size.width*.045,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: IconButton(onPressed: (){
-                    Navigator.pushNamed(context, '/setup');
-                      }, icon: Icon(Icons.qr_code, color: blue,size: MediaQuery.of(context).size.width*.045,)),
+                    Navigator.pushNamed(context, "/login");
+                  }
+                  , icon: Icon(Icons.logout, color: Colors.red,)),
                 )
                 
               ],
@@ -37,7 +42,7 @@ class _profileState extends State<profile> {
             Center(
               child: Text(
                 'Business cards',
-                style: TextStyle(fontWeight: FontWeight.bold, color: blue, fontSize: MediaQuery.of(context).size.height*.055),)
+                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: MediaQuery.of(context).size.height*.055),)
               ),
 
               Card(
@@ -53,11 +58,11 @@ class _profileState extends State<profile> {
                       Column(
                         children: [
                           Icon(Icons.person,
-                          size: MediaQuery.of(context).size.height*.2,),
+                          size: MediaQuery.of(context).size.height*.15,),
                         ],
                       ),
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Abebe Kebede', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.055),),
@@ -70,53 +75,44 @@ class _profileState extends State<profile> {
                           )),
                           RichText(text: 
                           const TextSpan(
-                            text: 'Email: ', style: TextStyle(fontWeight: FontWeight.bold, ),
+                            text: 'Email: ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black ),
                             children: <TextSpan>[
                               TextSpan(text: 'test@gmail.com', style: TextStyle(color: Colors.grey))
                             ]
                           )),
                           RichText(text: 
                           const TextSpan(
-                            text: 'Phone NO: ', style: TextStyle(fontWeight: FontWeight.bold, ),
+                            text: 'Phone NO: ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black ),
                             children: <TextSpan>[
                               TextSpan(text: '0912345678', style: TextStyle(color: Colors.grey))
                             ]
                           )),
                           RichText(text: 
                           const TextSpan(
-                            text: 'Job Type: ', style: TextStyle(fontWeight: FontWeight.bold, ),
+                            text: 'Job Type: ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black ),
                             children: <TextSpan>[
                               TextSpan(text: 'CEO', style: TextStyle(color: Colors.grey))
                             ]
                           )),
                           RichText(text: 
                           const TextSpan(
-                            text: 'company: ', style: TextStyle(fontWeight: FontWeight.bold, ),
+                            text: 'company: ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black ),
                             children: <TextSpan>[
                               TextSpan(text: 'ABC .PLC', style: TextStyle(color: Colors.grey))
                             ]
                           )),
+                          ElevatedButton(onPressed: (){
+                                Navigator.pushNamed(context, "/edit_card");
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: blue,
+                                
+                              )
+                              , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.04),) ),
                           
                           
                         ],
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(onPressed: (){
-                              Navigator.pushNamed(context, "");
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: blue,
-                              
-                            )
-                            , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.04),) ),
-                          ),
-                          
-                        ],
-                      )
                       
                     ],
                   ),
@@ -125,6 +121,9 @@ class _profileState extends State<profile> {
 
           ],
         ),
+        floatingActionButton:  IconButton(onPressed: (){
+                    Navigator.pushNamed(context, '');
+                      }, icon: Icon(Icons.qr_code, color: Colors.white,size: MediaQuery.of(context).size.width*.1,)),
       ),
     );
   }

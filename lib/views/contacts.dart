@@ -1,4 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/setup.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import 'constant/text.dart';
 
@@ -13,20 +16,8 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: "#CF786F".toColor(),
-        appBar: AppBar(
-          backgroundColor: "#EDBDAE".toColor(),
-          elevation: 25,
-          foregroundColor: Colors.white,
-          title: const Text("Digital Business Card"),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: const Icon(Icons.account_circle_outlined))
-          ],
-        ),
+        backgroundColor: '#2B5B80'.toColor(),
+        appBar: MyAppbar(),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,7 +40,7 @@ class _ContactsState extends State<Contacts> {
                     child: Row(
                       children: [
                         Image.asset(
-                          "assets/eagle.jpg",
+                          "assets/a.jpg",
                           fit: BoxFit.cover,
                           height: 200,
                           width: 130,
@@ -157,7 +148,7 @@ class _ContactsState extends State<Contacts> {
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("assets/eagle.jpg"),
+                              image: AssetImage("assets/a.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius:
@@ -170,22 +161,7 @@ class _ContactsState extends State<Contacts> {
             )
           ],
         )),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: "#EDBDAE".toColor(),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: '',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-                backgroundColor: Colors.purple)
-          ],
-        ));
+         drawer: MyDrawer(),
+      );
   }
 }
