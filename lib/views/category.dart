@@ -1,6 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 class Category extends StatelessWidget {
   const Category({super.key});
@@ -44,8 +45,8 @@ class Category extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 210, 0),
                     child: Container(
-                      child: Text(
-                        'Catagory',
+                      child: const LocaleText(
+                        'catagory',
                         style: TextStyle(
                             fontSize: 20.08,
                             color: Colors.black,
@@ -103,8 +104,8 @@ class Category extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  'Menu',
+                LocaleText(
+                  'menu',
                   style: TextStyle(color: Colors.white),
                 ),
               ],

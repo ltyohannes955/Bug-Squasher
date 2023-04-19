@@ -1,7 +1,9 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'constant/text.dart';
+import 'Setting.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
@@ -19,7 +21,7 @@ class _ContactsState extends State<Contacts> {
         backgroundColor: '#2B5B80'.toColor(),
         elevation: 25,
         foregroundColor: Colors.white,
-        title: const Text("Digital Business Card"),
+        title: LocaleText('digital_business_card'),
         actions: [
           IconButton(
               onPressed: () {
@@ -37,6 +39,8 @@ class _ContactsState extends State<Contacts> {
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w900, fontSize: 15),
           ),
+          
+      
           Card(
             elevation: 25,
             color: '#FAF9F6'.toColor(),
@@ -117,8 +121,8 @@ class _ContactsState extends State<Contacts> {
           Row(
             children: [b, c, d, e],
           ),
-          const Text(
-            "Popular",
+          const LocaleText(
+            'popular',
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w900, fontSize: 15),
           ),
@@ -160,45 +164,48 @@ class _ContactsState extends State<Contacts> {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  'Menu',
+                LocaleText(
+                  'menu',
                   style: TextStyle(color: Colors.white),
                 ),
               ],
             ),
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/Contacts');
-              },
-              style: ElevatedButton.styleFrom(
-                primary: '#2B5B80'.toColor(), // Background color
-              ),
-              child: Icon(
-                Icons.home,
-              )),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/catagory');
-              },
-              style: ElevatedButton.styleFrom(
-                primary: '#2B5B80'.toColor(), // Background color
-              ),
-              child: Icon(Icons.category_sharp)),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/Explor_page');
-              },
-              style: ElevatedButton.styleFrom(
-                primary: '#2B5B80'.toColor(), // Background color
-              ),
-              child: Icon(Icons.explore_sharp)),
-          ElevatedButton(
-              onPressed: signout,
-              style: ElevatedButton.styleFrom(
-                primary: '#2B5B80'.toColor(), // Background color
-              ),
-              child: Icon(Icons.logout_outlined))
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Contacts');
+          },
+           style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+   child: Icon(Icons.home,)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/catagory');
+          },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.category_sharp)),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/Explor_page');
+          
+          },
+           style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(),),
+           child: Icon(Icons.explore_sharp)),
+           ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/settings');
+          
+          },
+           style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(),),
+           child: Icon(Icons.language_outlined)),
+           ElevatedButton(onPressed: signout,
+          
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.logout_outlined))
+
         ]),
       ),
     );

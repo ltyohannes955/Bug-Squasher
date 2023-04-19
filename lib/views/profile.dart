@@ -1,5 +1,6 @@
 import 'package:digital_business_card/views/setup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 import 'constant/colors.dart';
 
@@ -46,8 +47,8 @@ class _profileState extends State<profile> {
               ],
             ),
             Center(
-                child: Text(
-              'Business cards',
+                child: LocaleText(
+              'digital_business_card',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -145,8 +146,8 @@ class _profileState extends State<profile> {
                                 style: ElevatedButton.styleFrom(
                                   primary: blue,
                                 ),
-                                child: Text(
-                                  "EDIT",
+                                child: LocaleText(
+                                  "edit",
                                   style: TextStyle(
                                       fontSize:
                                           MediaQuery.of(context).size.width *
@@ -156,27 +157,7 @@ class _profileState extends State<profile> {
                         ),
                       ],
                     ),
-                    // Column(
-                    //   mainAxisAlignment: MainAxisAlignment.end,
-
-                    //   children: [
-                    //     Row(
-
-                    //       children: [
-                    //         ElevatedButton(onPressed: (){
-                    //           Navigator.pushNamed(context, "/edit_card");
-                    //         },
-                    //         style: ElevatedButton.styleFrom(
-
-                    //           primary: blue,
-
-                    //         )
-                    //         , child: Text("EDIT", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.04),) ),
-                    //       ],
-                    //     ),
-
-                    //   ],
-                    // )
+                    
                   ],
                 ),
               ),
