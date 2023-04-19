@@ -83,7 +83,7 @@ class _profileState extends State<profile> {
                                   MediaQuery.of(context).size.width * .055),
                         ),
                         RichText(
-                            text: const TextSpan(
+                            text:  const TextSpan(
                                 text: 'Work Area: ',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,

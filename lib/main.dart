@@ -22,10 +22,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-
   WidgetsFlutterBinding.ensureInitialized();
-  await Locales.init(['en', 'es', 'ar','am']);
-
+  await Locales.init(['en', 'es', 'ar', 'am']);
 
   runApp(const MyApp());
 }
@@ -36,31 +34,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider(
       create: (context) => CatagoryBloc(),
       child: LocaleBuilder(
-      builder: (locale) => MaterialApp(
-        localizationsDelegates: Locales.delegates,
-        supportedLocales: Locales.supportedLocales,
-        locale: locale,
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: {
-          '/': (context) => AuthPage(),
-
-          '/login': (context) => loginScreen(),
-          '/signUp': (context) => signUpscreen(),
-          '/setup': (context) => setup(),
-          '/profile': (context) => profile(),
-          '/edit_card': (context) => edit_card(),
-          '/catagory': (context) => Category(),
-          '/Contacts': (context) => Contacts(),
-          '/Explor_page': (context) => Explor_page(),
-
-          '/Personal': (context) => Personal(),
-          '/settings': (context) => SettingScreen()
-        },
+        builder: (locale) => MaterialApp(
+          localizationsDelegates: Locales.delegates,
+          supportedLocales: Locales.supportedLocales,
+          locale: locale,
+          debugShowCheckedModeBanner: false,
+          routes: {
+            '/': (context) => AuthPage(),
+            '/login': (context) => loginScreen(),
+            '/signUp': (context) => signUpscreen(),
+            '/setup': (context) => setup(),
+            '/profile': (context) => profile(),
+            '/edit_card': (context) => edit_card(),
+            '/catagory': (context) => Category(),
+            '/Contacts': (context) => Contacts(),
+            '/Explor_page': (context) => Explor_page(),
+            '/Personal': (context) => Personal(),
+            '/settings': (context) => SettingScreen()
+          },
         ),
       ),
     );

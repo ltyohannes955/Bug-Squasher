@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
+import 'constant/colors.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  LocaleText('language'),),
+      appBar: AppBar(title:  LocaleText('language'),backgroundColor:  '#2B5B80'.toColor() ,),
     
       body: Column(
         children: [

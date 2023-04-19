@@ -39,8 +39,8 @@ class Category extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0, 10, 210, 0),
                           child: Container(
-                            child: Text(
-                              'Catagory',
+                            child: LocaleText(
+                              'catagory',
                               style: TextStyle(
                                   fontSize: 20.08,
                                   color: Colors.black,

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'Setting.dart';
+
 import 'package:flutter_locales/flutter_locales.dart';
 
 class loginScreen extends StatefulWidget {
@@ -138,7 +138,7 @@ class _loginScreenState extends State<loginScreen> {
                   Navigator.pushNamed(context, '/signUp');
                 },
                 child: LocaleText("don't_have_an_Account?")),
-                ElevatedButton(onPressed:(){Navigator.pushNamed(context, '/settings');} ,child: Icon(Icons.language_outlined,) ),
+                ElevatedButton(onPressed:(){Navigator.pushNamed(context, '/settings');} ,child: Icon(Icons.language_outlined,), ),
                 
           ],
         ),
