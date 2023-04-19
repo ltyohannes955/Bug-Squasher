@@ -1,4 +1,6 @@
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,36 +16,14 @@ class _Explor_pageState extends State<Explor_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: '#2B5B80'.toColor(),
-        title: const Text(
-          'DBC',
-          style: TextStyle(
-              fontSize: 31.09,
-              color: Color.fromARGB(255, 255, 255, 255),
-              fontWeight: FontWeight.w700,
-              fontStyle: FontStyle.normal),
-        ),
-        centerTitle: true,
-        actions: [
-          Container(
-            child: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              icon: const Icon(
-                Icons.account_circle_outlined,
-                size: 33,
-              ),
-            ),
-          )
-        ],
-      ),
+      appBar: MyAppbar(),
       body: ListView.builder(
           itemCount: 7,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/Personal');
+              },
               child: Container(
                   height: 164,
                   width: 343,
@@ -172,50 +152,7 @@ class _Explor_pageState extends State<Explor_page> {
                   )),
             );
           }),
-      drawer: Drawer(
-        child: ListView(children: [
-          Container(
-            color: '#2B5B80'.toColor(),
-            height: 53,
-            child: Row(
-             children: const [
-                 Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.menu_sharp,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  'Menu',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/Contacts');
-          },
-           style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-   child: Icon(Icons.home,)),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/catagory');
-          },
-          style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-           child: Icon(Icons.category_sharp)),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/Explor_page');
-          },
-          style: ElevatedButton.styleFrom(
-            primary: '#2B5B80'.toColor(), // Background color
-          ),
-           child: Icon(Icons.explore_sharp))
-        ]),
-      ),
+      drawer: MyDrawer(),
     );
   }
 }

@@ -47,6 +47,16 @@ class _edit_cardState extends State<edit_card> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10,10,0,0),
+                    child: Text('Full Name:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
+                  ), 
+                  TextFormField(
+                    initialValue: 'Abebe kebede',
+                    decoration: InputDecoration(
+                      labelText: "Full Name",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10,10,0,0),
                     child: Text('Work Area', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
                   ),
 
@@ -192,8 +202,7 @@ class _edit_cardState extends State<edit_card> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: Center(
+                      padding: const EdgeInsets.only(top: 20,left: 280),
                       child: ElevatedButton(onPressed: (){
                         Navigator.pushNamed(context, '/profile');
                       },
@@ -203,7 +212,7 @@ class _edit_cardState extends State<edit_card> {
                       ), 
                       child: Text("Submit", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.035),)),
                     ),
-                  )
+                  
               ],)
             )
           ],
