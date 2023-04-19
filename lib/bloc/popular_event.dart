@@ -1,15 +1,10 @@
 part of 'popular_bloc.dart';
 
-class PopularEvent extends Equatable {
-  const PopularEvent();
+@immutable
+abstract class PopularEvent {}
 
-  @override
-  List<Object> get props => [];
-}
-
-class PopularFetchEvent extends PopularEvent {
-  const PopularFetchEvent();
-
+class PopularEventFetch extends PopularEvent {
+  PopularEventFetch();
   @override
   List<Object> get props => [];
 }

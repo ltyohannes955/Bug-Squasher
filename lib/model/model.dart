@@ -1,21 +1,16 @@
 class Model {
-  int id;
-  String name;
-  String image;
+  String id;
+  String Image;
 
-  Model({required this.id, required this.name, required this.image});
+  Model({required this.id, required this.Image});
 
   factory Model.fromJson(Map<String, dynamic> parsedJson) {
-    return Model(
-        id: parsedJson['id'],
-        name: parsedJson['name'],
-        image: parsedJson['image']);
+    return Model(id: parsedJson['id'], Image: parsedJson['Image']);
   }
   toJson() {
     Map<String, dynamic> json = {};
     json['id'] = id;
-    json['name'] = name;
-    json['image'] = image;
+    json['Image'] = Image;
     return json;
   }
 

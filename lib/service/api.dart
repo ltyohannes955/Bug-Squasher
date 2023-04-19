@@ -6,7 +6,7 @@ import 'package:digital_business_card/model/model.dart';
 class ApiServiceProvider {
   Future<List?> fetchActivity() async {
     final response = await http.get(
-      Uri.parse('https://643659573e4d2b4a12cff409.mockapi.io'),
+      Uri.parse('https://643659573e4d2b4a12cff409.mockapi.io/donut'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Accept': 'application/json',
