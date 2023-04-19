@@ -21,7 +21,9 @@ class _Explor_pageState extends State<Explor_page> {
           itemCount: 7,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/Personal');
+              },
               child: Container(
                   height: 164,
                   width: 343,
