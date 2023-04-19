@@ -16,9 +16,9 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: '#E5C5BD'.toColor(),
+      backgroundColor: '#2B5B80'.toColor(),
       appBar: AppBar(
-        backgroundColor: '#E5C5BD'.toColor(),
+        backgroundColor: '##2B5B80'.toColor(),
         elevation: 25,
         foregroundColor: Colors.white,
         title: const Text("Digital Business Card"),
@@ -52,7 +52,6 @@ class _ContactsState extends State<Contacts> {
                 ),
                 Card(
                   elevation: 25,
-                  color: '#FAF9F6'.toColor(),
                   child: Column(
                     children: [
                       Container(
