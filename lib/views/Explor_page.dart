@@ -16,6 +16,7 @@ class Explor_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppbar(),
+
       body: BlocBuilder<ExplorBloc, ExplorState>(
         builder: (context, state) {
           if (state is ExplorInitial) {
@@ -65,6 +66,7 @@ class Explor_page extends StatelessWidget {
                                         style: TextStyle(
                                             fontSize: 27,
                                             fontWeight: FontWeight.w400),
+
                                       ),
                                     ),
                                   ),
