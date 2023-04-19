@@ -42,10 +42,10 @@ class MyApp extends StatelessWidget {
           '/edit_card': (context) => edit_card(),
           '/catagory': (context) => Category(),
           '/Contacts': (context) => Contacts(),
-          '/Explor_page': (context) => Explor_page()
+          '/Explor_page': (context) => Explor_page(),
+          '/Personal': (context) => Personal()
         },
       ),
-
     );
   }
 }
