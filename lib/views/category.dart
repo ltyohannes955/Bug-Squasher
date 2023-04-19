@@ -3,9 +3,13 @@ import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/catagory_bloc.dart';
 import '../model/cat_List.dart';
+
+import 'package:flutter_locales/flutter_locales.dart';
+
 
 class Category extends StatelessWidget {
   const Category({super.key});
@@ -16,6 +20,7 @@ class Category extends StatelessWidget {
       right: true,
       left: true,
       child: Scaffold(
+
         appBar: MyAppbar(),
         body: BlocBuilder<CatagoryBloc, CatagoryState>(
           builder: (context, state) {
@@ -91,6 +96,8 @@ class Category extends StatelessWidget {
                           ),
                         );
                       }),
+
+
                 ),
               ]);
             }

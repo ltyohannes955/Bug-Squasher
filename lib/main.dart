@@ -1,15 +1,16 @@
 import 'package:digital_business_card/views/Explor_page.dart';
+import 'package:digital_business_card/views/Setting.dart';
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/auth_page.dart';
 import 'package:digital_business_card/views/edit_card.dart';
-import 'package:digital_business_card/views/intro.dart';
 import 'package:digital_business_card/views/login.dart';
 import 'package:digital_business_card/views/personal.dart';
 import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/catagory_bloc.dart';
@@ -20,6 +21,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Locales.init(['en', 'es', 'ar','am']);
+
+
   runApp(const MyApp());
 }
 
@@ -29,12 +36,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (context) => CatagoryBloc(),
-      child: MaterialApp(
+      child: LocaleBuilder(
+      builder: (locale) => MaterialApp(
+        localizationsDelegates: Locales.delegates,
+        supportedLocales: Locales.supportedLocales,
+        locale: locale,
+      MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => AuthPage(),
+
           '/login': (context) => loginScreen(),
           '/signUp': (context) => signUpscreen(),
           '/setup': (context) => setup(),
@@ -43,8 +57,11 @@ class MyApp extends StatelessWidget {
           '/catagory': (context) => Category(),
           '/Contacts': (context) => Contacts(),
           '/Explor_page': (context) => Explor_page(),
-          '/Personal': (context) => Personal()
+
+          '/Personal': (context) => Personal(),
+          '/settings': (context) => SettingScreen()
         },
+        ),
       ),
     );
   }

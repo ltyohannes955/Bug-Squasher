@@ -1,4 +1,11 @@
-part of 'activity_bloc.dart';
+import 'package:equatable/Equatable.dart';
 
-@immutable
-abstract class ActivityEvent {}
+abstract class ActivityEvent extends Equatable {
+  const ActivityEvent();
+}
+
+class LoadUserEvent extends ActivityEvent {
+  LoadUserEvent();
+  @override
+  List<Object?> get props => [];
+}

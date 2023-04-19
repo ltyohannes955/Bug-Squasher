@@ -29,7 +29,7 @@ class _Explor_pageState extends State<Explor_page> {
                   width: 343,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(29),
-                      color: Color.fromARGB(255, 199, 193, 193)),
+                      color: Color.fromARGB(255, 150, 180, 146)),
                   margin: const EdgeInsets.all(10),
                   child: Row(
                     children: [
