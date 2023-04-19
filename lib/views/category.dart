@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/catagory_bloc.dart';
+import '../bloc/explor_bloc.dart';
 import '../model/cat_List.dart';
 
 class Category extends StatelessWidget {
@@ -61,32 +62,40 @@ class Category extends StatelessWidget {
                         cat_list catagory = state.catagory_list[index];
                         return Padding(
                           padding: const EdgeInsets.all(9.0),
-                          child: Container(
-                            height: 400,
-                            width: 137.11,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    colorFilter: ColorFilter.mode(
-                                        Colors.black54, BlendMode.darken),
-                                    image: NetworkImage(catagory.Image),
-                                    fit: BoxFit.cover),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Color.fromARGB(255, 179, 173, 173),
-                                    blurRadius: 17.0,
-                                    spreadRadius: 5,
-                                    offset: Offset(3, 3),
-                                  ),
-                                ],
-                                color: Color.fromARGB(255, 124, 124, 122),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Text(
-                              catagory.JobTitle,
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w600),
+                          child: GestureDetector(
+                            onTap: () {
+                              BlocProvider.of<ExplorBloc>(context).add(
+                                  ExplorerEventFetch(
+                                      catagory: catagory.JobTitle));
+                              Navigator.pushNamed(context, '/Explor_page');
+                            },
+                            child: Container(
+                              height: 400,
+                              width: 137.11,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      colorFilter: ColorFilter.mode(
+                                          Colors.black54, BlendMode.darken),
+                                      image: NetworkImage(catagory.Image),
+                                      fit: BoxFit.cover),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 179, 173, 173),
+                                      blurRadius: 17.0,
+                                      spreadRadius: 5,
+                                      offset: Offset(3, 3),
+                                    ),
+                                  ],
+                                  color: Color.fromARGB(255, 124, 124, 122),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Text(
+                                catagory.JobTitle,
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
                         );
