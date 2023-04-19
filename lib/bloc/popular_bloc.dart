@@ -13,15 +13,16 @@ class PopularBloc extends Bloc<PopularEvent, PopularState> {
   final _apiService = ApiServiceProvider();
   final _service = Service();
   PopularBloc() : super(PopularInitial()) {
-    on<PopularFetchEvent>((event, emit) async {
+    on<PopularEvent>((event, emit) async {
       emit(PopularLoading());
       try {
         final activity = await _apiService.fetchActivity();
-        await ((val) => {
-          
-        });
-        
-      }catch(e){}
+        emit(PopularSuccess(
+          Popular_items: activity!,
+        ));
+      } catch (e) {
+        print(e);
+      }
     });
   }
 }
