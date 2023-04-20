@@ -8,6 +8,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../model/explor_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Explor_page extends StatelessWidget {
   const Explor_page({super.key});
@@ -16,7 +17,6 @@ class Explor_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppbar(),
-
       body: BlocBuilder<ExplorBloc, ExplorState>(
         builder: (context, state) {
           if (state is ExplorInitial) {
@@ -42,7 +42,6 @@ class Explor_page extends StatelessWidget {
                       margin: const EdgeInsets.all(10),
                       child: Row(
                         children: [
-                         
                           Container(
                               height: MediaQuery.of(context).size.height * 0.2,
                               width: MediaQuery.of(context).size.width * 0.3,
@@ -66,7 +65,6 @@ class Explor_page extends StatelessWidget {
                                         style: TextStyle(
                                             fontSize: 27,
                                             fontWeight: FontWeight.w400),
-
                                       ),
                                     ),
                                   ),
@@ -101,46 +99,54 @@ class Explor_page extends StatelessWidget {
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.1,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.1,
-                                          decoration: const BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(20)),
-                                          ),
-                                          child: const Icon(
-                                            Icons.message_outlined,
-                                            fill: BorderSide.strokeAlignCenter,
-                                          ),
-                                        ),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.1,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.1,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(20)),
+                                            ),
+                                            child: IconButton(
+                                              onPressed: () => launch(
+                                                  'sms:${explor.phonNO}\$'),
+                                              icon: Icon(
+                                                Icons.message_outlined,
+                                                fill: BorderSide
+                                                    .strokeAlignCenter,
+                                              ),
+                                            )),
                                         const SizedBox(
                                           width: 20,
                                         ),
                                         Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.1,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.1,
-                                          decoration: const BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(20)),
-                                          ),
-                                          child: const Icon(
-                                            Icons.phone,
-                                            fill: BorderSide.strokeAlignCenter,
-                                          ),
-                                        ),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.1,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.1,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(20)),
+                                            ),
+                                            child: IconButton(
+                                              onPressed: () => launch(
+                                                  "tel:${explor.phonNO}\$"),
+                                              icon: const Icon(
+                                                Icons.phone,
+                                                fill: BorderSide
+                                                    .strokeAlignCenter,
+                                              ),
+                                            )),
                                         const SizedBox(
                                           width: 20,
                                         ),
