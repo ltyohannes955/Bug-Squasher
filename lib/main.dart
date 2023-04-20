@@ -12,6 +12,7 @@ import 'package:digital_business_card/views/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/activity_bloc.dart';
 import 'bloc/catagory_bloc.dart';
 import 'firebase_options.dart';
 
@@ -29,12 +30,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CatagoryBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CatagoryBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ActivityBloc(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => AuthPage(),
+          '/': (context) => setup(),
           '/login': (context) => loginScreen(),
           '/signUp': (context) => signUpscreen(),
           '/setup': (context) => setup(),
@@ -45,7 +53,6 @@ class MyApp extends StatelessWidget {
           '/Explor_page': (context) => Explor_page()
         },
       ),
-
     );
   }
 }

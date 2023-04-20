@@ -42,6 +42,9 @@ dependencies:
   firebase_core: ^2.9.0
   firebase_auth: ^4.4.0
   flutter_bloc: ^8.1.2
+  sqflite: any
+  path_provider: ^2.0.14
+  equatable: ^2.0.5
 
 
 dev_dependencies:

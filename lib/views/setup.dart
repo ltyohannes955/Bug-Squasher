@@ -1,6 +1,10 @@
 
+import 'package:digital_business_card/bloc/activity_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../database/model.dart';
+import '../database/service.dart';
 import 'constant/colors.dart';
 
 
@@ -27,13 +31,21 @@ class setup extends StatefulWidget {
     FirebaseAuth.instance.signOut();
   }
 
+  
 
 class _setupState extends State<setup> {
-  int _val = 0;
+  String _val = "";
+  final _FullController = TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final _phoneNOAreaController = TextEditingController();
+  final _jobcontroller = TextEditingController();
+  final _companycontroller = TextEditingController();
+  final _service = Services();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -67,13 +79,10 @@ class _setupState extends State<setup> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                    padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                    child: Text('Full Name:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
-                  ), 
                   TextFormField(
-                    decoration: InputDecoration(
-                      labelText: "Full Nmae",
+                    controller: _FullController,
+                    decoration: const InputDecoration(
+                      labelText: "Full Name",
                     ),
                   ),
                     Padding(
@@ -87,8 +96,8 @@ class _setupState extends State<setup> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: Text('Enggineering'),
-                              value: 1, 
+                            title: const Text('Enggineering'),
+                              value: 'Enggineering', 
                               groupValue: _val,
                               onChanged: (value){
                                 setState(() {
@@ -100,8 +109,8 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: Text('Economics'),
-                                value: 2, 
+                              title: const Text('Economics'),
+                                value: 'Economics', 
                                 groupValue: _val,
                                 onChanged: (value){
                             setState(() {
@@ -119,8 +128,8 @@ class _setupState extends State<setup> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: Text('tech'),
-                              value: 3, 
+                            title: const Text('tech'),
+                              value: 'tech', 
                               groupValue: _val,
                               onChanged: (value){
                                 setState(() {
@@ -133,8 +142,8 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: Text('Medicaine'),
-                                value: 4, 
+                              title: const Text('Medicaine'),
+                                value: 'Medicaine', 
                                 groupValue: _val,
                                 onChanged: (value){
                             setState(() {
@@ -153,8 +162,8 @@ class _setupState extends State<setup> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: Text('Psychology'),
-                              value: 5, 
+                            title: const Text('Psychology'),
+                              value: 'Psychology', 
                               groupValue: _val,
                               onChanged: (value){
                                 setState(() {
@@ -167,8 +176,8 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: Text('Law'),
-                                value: 6, 
+                              title: const Text('Law'),
+                                value: 'Law', 
                                 groupValue: _val,
                                 onChanged: (value){
                             setState(() {
@@ -180,48 +189,51 @@ class _setupState extends State<setup> {
                       
                      ],
                    ),
-    
-                   Padding(
-                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                      child: Text('Email:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
-                    ), 
                     TextFormField(
-                      decoration: InputDecoration(
+                      controller: _emailcontroller,
+                      decoration: const InputDecoration(
                         labelText: "Email",
                       ),
                     ),
-    
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                      child: Text('Phone NO:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
-                    ), 
+     
                     TextFormField(
-                      decoration: InputDecoration(
+                      controller: _phoneNOAreaController,
+                      decoration: const InputDecoration(
                         labelText: "Phone NO",
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                      child: Text('Job Type:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
-                    ), 
+
                     TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Jobe Type",
+                      controller: _jobcontroller,
+                      decoration: const InputDecoration(
+                        labelText: "Job Type",
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                      child: Text('Company:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
-                    ), 
+
                     TextFormField(
-                      decoration: InputDecoration(
+                      controller: _companycontroller,
+                      decoration: const InputDecoration(
                         labelText: "Company",
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20,left: 280),
                       child: ElevatedButton(onPressed: (){
+                        final FullName = _FullController.text;
+                        final workArea = _val;
+                        final email = _emailcontroller.text;
+                        final phoneNO = int.parse(_phoneNOAreaController.text);
+                        final jobType = _jobcontroller.text;
+                        final company = _companycontroller.text;
+
+
+                        final Business_card model = Business_card(FullName: FullName, workArea: workArea,email: email,phoneNO: phoneNO, jobType: jobType, company: company);
                         Navigator.pushNamed(context, '/catagory');
+                        setState(() {
+                          BlocProvider.of<ActivityBloc>(context)
+                            .add(PersonalEvent(business_card: model));
+                        });
+                        
                       },
                       style: ElevatedButton.styleFrom(
                         primary: blue,
