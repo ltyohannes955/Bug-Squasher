@@ -60,7 +60,9 @@ class _setupState extends State<setup> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: TextButton(onPressed: (){}, 
+                    child: TextButton(onPressed: (){
+                      Navigator.pushNamed(context, '/Contacts');
+                    }, 
                     child: const Text("SKIP", style: TextStyle(color: blue, fontWeight: FontWeight.bold),)
                     ),
                   )
@@ -228,7 +230,7 @@ class _setupState extends State<setup> {
 
 
                         final Business_card model = Business_card(FullName: FullName, workArea: workArea,email: email,phoneNO: phoneNO, jobType: jobType, company: company);
-                        Navigator.pushNamed(context, '/catagory');
+                        Navigator.pushNamed(context, '/Contacts');
                         setState(() {
                           BlocProvider.of<ActivityBloc>(context)
                             .add(PersonalEvent(business_card: model));

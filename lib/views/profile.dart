@@ -79,6 +79,13 @@ class _profileState extends State<profile> {
                 child: CircularProgressIndicator(),
               );
             }else if (state is ActivityLoaded){
+              if (state.card.isEmpty){
+                return Center(
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.pushNamed(context, '/setup');
+                  }, child: Text('Add Card')),
+                );
+              }
               return 
               Container(
                 height: MediaQuery.of(context).size.height*.76,
@@ -87,7 +94,6 @@ class _profileState extends State<profile> {
                   itemCount: state.card.length,
                   itemBuilder: (BuildContext context, int index){
                     final val = state.card[index];
-                    print(state.card.length);
                      return Card(
                        elevation: 20,
                        child: Container(
