@@ -14,6 +14,7 @@ import 'package:flutter_locales/flutter_locales.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/catagory_bloc.dart';
+import 'bloc/explor_bloc.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CatagoryBloc(),
         ),
+        BlocProvider(
+          create: (context) => ExplorBloc(),
+        ),
        
       ],
       child: LocaleBuilder(
@@ -61,6 +65,7 @@ class MyApp extends StatelessWidget {
             '/settings': (context) => SettingScreen()
           },
         ),
+    
       ),
     );
   }

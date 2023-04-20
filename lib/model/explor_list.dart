@@ -11,8 +11,7 @@ class explor_list {
   String id;
 
   explor_list(
-      {
-      required this.workarea,
+      {required this.workarea,
       required this.jobTYPE,
       required this.fullNAME,
       required this.image_E,
@@ -23,14 +22,14 @@ class explor_list {
 
   factory explor_list.fromJson(Map<String, dynamic> parsedjson) {
     return explor_list(
-    workarea:  parsedjson['workarea'],
-    jobTYPE: parsedjson['job_TYPE'],
-    fullNAME: parsedjson['full_NAME'],
-    image_E: parsedjson['image_e'],
-    email: parsedjson['Email'],
-    phonNO: parsedjson['Phon_NO'],
-    company: parsedjson['Company'],
-    id: parsedjson['id'],
+      workarea: parsedjson['workarea'],
+      jobTYPE: parsedjson['job_TYPE'],
+      fullNAME: parsedjson['full_NAME'],
+      image_E: parsedjson['image_e'],
+      email: parsedjson['Email'],
+      phonNO: parsedjson['Phon_NO'],
+      company: parsedjson['Company'],
+      id: parsedjson['id'],
     );
   }
 
@@ -46,7 +45,8 @@ class explor_list {
     json['id'] = id;
     return json;
   }
-  static List itemList(List item) {
+
+  static List itemLists(List item) {
     List tiles = [];
     for (var i = 0; i < item.length; i++) {
       tiles.add(explor_list.fromJson(item[i]));
