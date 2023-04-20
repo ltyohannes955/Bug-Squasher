@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 class Personal extends StatefulWidget {
   const Personal({super.key});
@@ -20,7 +21,7 @@ class _PersonalState extends State<Personal> {
           backgroundColor: "#CF786F".toColor(),
           elevation: 25,
           foregroundColor: Colors.white,
-          title: const Text("Digital Business Card"),
+          title: const LocaleText("digital_business_card"),
           actions: [
             IconButton(
                 onPressed: () {
@@ -132,8 +133,8 @@ class _PersonalState extends State<Personal> {
                 EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.05),
             child: const Align(
               alignment: Alignment.topLeft,
-              child: Text(
-                "About",
+              child: LocaleText(
+                'about',
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,

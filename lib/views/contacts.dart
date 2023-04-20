@@ -3,6 +3,7 @@ import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'constant/text.dart';
 
 class Contacts extends StatefulWidget {
@@ -130,7 +131,7 @@ class _ContactsState extends State<Contacts> {
             Row(
               children: [b, c, d, e],
             ),
-            const Text(
+            const LocaleText(
               "Popular",
               style: TextStyle(
                   color: Colors.white,
