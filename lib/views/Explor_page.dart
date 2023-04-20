@@ -65,6 +65,7 @@ class Explor_page extends StatelessWidget {
                                         style: TextStyle(
                                             fontSize: 27,
                                             fontWeight: FontWeight.w400),
+
                                       ),
                                     ),
                                   ),
