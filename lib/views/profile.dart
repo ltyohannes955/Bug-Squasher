@@ -88,13 +88,7 @@ class _profileState extends State<profile> {
               }
               return 
               Container(
-                height: MediaQuery.of(context).size.height*.76,
-                child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: state.card.length,
-                  itemBuilder: (BuildContext context, int index){
-                    final val = state.card[index];
-                     return Card(
+                child: Card(
                        elevation: 20,
                        child: Container(
                          decoration:
@@ -116,7 +110,7 @@ class _profileState extends State<profile> {
                                crossAxisAlignment: CrossAxisAlignment.start,
                                children: [
                                  Text(
-                                   val.FullName,
+                                   state.card[0].FullName,
                                    style: TextStyle(
                                        fontWeight: FontWeight.bold,
                                        fontSize:
@@ -130,7 +124,7 @@ class _profileState extends State<profile> {
                                              color: Colors.black),
                                          children: <TextSpan>[
                                        TextSpan(
-                                           text: val.workArea,
+                                           text: state.card[0].workArea,
                                            style: TextStyle(color: Colors.grey))
                                      ])),
                                  RichText(
@@ -141,7 +135,7 @@ class _profileState extends State<profile> {
                                              color: Colors.black),
                                          children: <TextSpan>[
                                        TextSpan(
-                                           text: val.email,
+                                           text: state.card[0].email,
                                            style: TextStyle(color: Colors.grey))
                                      ])),
                                  RichText(
@@ -152,7 +146,7 @@ class _profileState extends State<profile> {
                                              color: Colors.black),
                                          children: <TextSpan>[
                                        TextSpan(
-                                           text: val.phoneNO.toString(),
+                                           text: state.card[0].phoneNO.toString(),
                                            style: TextStyle(color: Colors.grey))
                                      ])),
                                  RichText(
@@ -163,7 +157,7 @@ class _profileState extends State<profile> {
                                              color: Colors.black),
                                          children: <TextSpan>[
                                        TextSpan(
-                                           text: val.jobType,
+                                           text: state.card[0].jobType,
                                            style: TextStyle(color: Colors.grey))
                                      ])),
                                  RichText(
@@ -174,7 +168,7 @@ class _profileState extends State<profile> {
                                              color: Colors.black),
                                          children: <TextSpan>[
                                        TextSpan(
-                                           text: val.company,
+                                           text: state.card[0].company,
                                            style: TextStyle(color: Colors.grey))
                                      ])),
                                  ElevatedButton(
@@ -196,8 +190,16 @@ class _profileState extends State<profile> {
                            ],
                          ),
                        ),
-                     );
-                  }),
+                     )
+                  ,
+
+                // child: ListView.builder(
+                //   scrollDirection: Axis.vertical,
+                //   itemCount: state.card.length,
+                //   itemBuilder: (BuildContext context, int index){
+                //     final state.card[0] = state.card[index];
+                //      return 
+                //   }),
               );
             }
             return Container();  
