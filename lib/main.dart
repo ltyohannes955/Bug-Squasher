@@ -34,8 +34,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CatagoryBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CatagoryBloc(),
+        ),
+       
+      ],
       child: LocaleBuilder(
         builder: (locale) => MaterialApp(
           localizationsDelegates: Locales.delegates,
