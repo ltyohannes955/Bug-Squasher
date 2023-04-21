@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:digital_business_card/views/setup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
@@ -12,6 +15,7 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,8 +39,8 @@ class _profileState extends State<profile> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
+                const Padding(
+                  padding: EdgeInsets.all(15.0),
                   child: IconButton(
                       onPressed: signout,
                       icon: Icon(
@@ -53,8 +57,14 @@ class _profileState extends State<profile> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: MediaQuery.of(context).size.height * .055),
-            )),
-            Card(
+            )
+            ),
+            StreamBuilder(
+              stream: FirebaseFirestore.instance.collection("UserCards").where("id" ,isEqualTo: auth.currentUser!.uid).snapshots(),
+              builder: (context,AsyncSnapshot<QuerySnapshot> snapshot){
+                if(snapshot.hasData){
+                  List data = snapshot.data!.docs;
+                  return Card(
               elevation: 20,
               child: Container(
                 decoration:
@@ -76,66 +86,66 @@ class _profileState extends State<profile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Abebe Kebede',
+                          data[0]['FullName'],
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize:
                                   MediaQuery.of(context).size.width * .055),
                         ),
                         RichText(
-                            text:  const TextSpan(
+                            text:   TextSpan(
                                 text: 'Work Area: ',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'Engineering',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0]["workArea"],
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
+                            text:  TextSpan(
                                 text: 'Email: ',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'test@gmail.com',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0]["email"],
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
+                            text:  TextSpan(
                                 text: 'Phone NO: ',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: '0912345678',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0]["phoneNO"].toString(),
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
+                            text:  TextSpan(
                                 text: 'Job Type: ',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'CEO',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0]["jobType"],
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
+                            text:  TextSpan(
                                 text: 'company: ',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'ABC .PLC',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0]["company"],
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         Row(
                           children: [
@@ -161,7 +171,12 @@ class _profileState extends State<profile> {
                   ],
                 ),
               ),
-            )
+            );
+                }
+                return Container();
+
+              }
+              )
           ],
         ),
         floatingActionButton: IconButton(
