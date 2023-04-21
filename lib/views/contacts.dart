@@ -52,6 +52,7 @@ class _ContactsState extends State<Contacts> {
                 ),
                 Card(
                   elevation: 25,
+
                   child: Column(
                     children: [
                       Container(
