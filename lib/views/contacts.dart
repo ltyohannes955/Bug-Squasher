@@ -18,7 +18,7 @@ class _ContactsState extends State<Contacts> {
     return Scaffold(
       backgroundColor: '#2B5B80'.toColor(),
       appBar: AppBar(
-        backgroundColor: '##2B5B80'.toColor(),
+        backgroundColor: '#2B5B80'.toColor(),
         elevation: 25,
         foregroundColor: Colors.white,
         title: const Text("Digital Business Card"),
@@ -52,13 +52,12 @@ class _ContactsState extends State<Contacts> {
                 ),
                 Card(
                   elevation: 25,
-
                   child: Column(
                     children: [
                       Container(
                         decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(1))),
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        width: MediaQuery.of(context).size.width * 0.95,
                         child: Row(
                           children: [
                             Image.asset(
@@ -149,20 +148,34 @@ class _ContactsState extends State<Contacts> {
                       itemCount: state.Popular_items.length,
                       itemBuilder: (BuildContext context, index) {
                         Model popular = state.Popular_items[index];
-                        return Card(
-                          elevation: 25,
-                          color: '#91ABC2'.toColor(),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(popular.Image),
-                                  fit: BoxFit.cover,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            height: MediaQuery.of(context).size.height * 0.01,
-                          ),
+                        return Column(
+                          children: [
+                            Card(
+                              elevation: 25,
+                              color: '#91ABC2'.toColor(),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(popular.Image),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.199,
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "${popular.Name}\$",
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12),
+                              ),
+                            )
+                          ],
                         );
                       }),
                 )
