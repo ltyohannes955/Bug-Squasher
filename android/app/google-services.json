@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "597140137923",
+    "firebase_url": "https://digital-business-card-83a4a-default-rtdb.firebaseio.com",
+    "project_id": "digital-business-card-83a4a",
+    "storage_bucket": "digital-business-card-83a4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597140137923:android:f8bcbef56eddb178337f76",
+        "android_client_info": {
+          "package_name": "com.example.digital_business_card"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597140137923-j8qa0u6kp1d3sid2uq166v8oq3a0ebif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGvWpgFjh4TzvqfFVdjYJUi0q_5m_Bo6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597140137923-j8qa0u6kp1d3sid2uq166v8oq3a0ebif.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "597140137923-0r5kakqb99tkdjt3p0o3imjd1qq0vbdb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.digitalBusinessCard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,11 @@
 import 'package:digital_business_card/model/model.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/setup.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'constant/text.dart';
 import 'package:digital_business_card/bloc/popular_bloc.dart';
 
@@ -17,19 +21,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: '#2B5B80'.toColor(),
-      appBar: AppBar(
-        backgroundColor: '#2B5B80'.toColor(),
-        elevation: 25,
-        foregroundColor: Colors.white,
-        title: const Text("Digital Business Card"),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              icon: const Icon(Icons.account_circle_outlined))
-        ],
-      ),
+      appBar: MyAppbar(),
       body: BlocBuilder<PopularBloc, PopularState>(
         builder: (context, state) {
           if (state is PopularInitial) {
