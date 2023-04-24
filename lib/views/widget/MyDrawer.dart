@@ -1,5 +1,6 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import '../setup.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -22,7 +23,7 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Text(
+                LocaleText(
                   'Menu',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -53,6 +54,15 @@ class MyDrawer extends StatelessWidget {
             primary: '#2B5B80'.toColor(), // Background color
           ),
            child: Icon(Icons.explore_sharp)),
+           SizedBox(height: 10,),
+            
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, '/settings');
+             },
+          style: ElevatedButton.styleFrom(
+            primary: '#2B5B80'.toColor(), // Background color
+          ),
+           child: Icon(Icons.language_outlined)),
            SizedBox(height: 10,),
 
           

@@ -1,0 +1,28 @@
+{
+    "localization": "አካባቢያዊነት",
+    "login": "ግባ",
+    "signup": "ተመዝገብ",
+    "email": "ኢሜይል",
+    "password": "የይለፍ ቃል",
+    "already_have_an_account": "መለያ አለህ? ግባ",
+    "don't_have_an_account?": "መለያ የለዎትም? ተመዝገብ ",
+    "confirm_password": "የይለፍ ቃል አረጋግጥ",
+    "Incorrect Email": "የተሳሳተ ኢሜይል",
+    "Incorrect password": "የተሳሳተ የይለፍ ቃል",
+    "digital_business_card": "ዲጂታል የንግድ ካርድ",
+    "menu": "ማውጫ",
+    "popular": "ታዋቂ",
+    "edit": "አርትዕ",
+    "about": "ስለ",
+    "catagory": "ምድብ",
+    "setting": "ቅንብር",
+    "current language is: ": "ወቅታዊ ቋንቋ ",
+    "language": "ቋንቋ",
+    "welcome": "እንኳን ደህና መጡ",
+    "english": "እንግሊዝኛ ",
+    "spanish": "ስፓንኛ",
+    "arabic": "አረብኛ",
+    "full_name": "ሙሉ ስም",
+
+    "amharic": "አማርኛ"
+}
