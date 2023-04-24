@@ -1,5 +1,6 @@
+import 'package:digital_business_card/bloc/popular_bloc.dart';
 import 'package:digital_business_card/views/Explor_page.dart';
-import 'package:digital_business_card/views/Setting.dart';
+import 'package:digital_business_card/views/Setting.dart
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/auth_page.dart';
@@ -10,6 +11,7 @@ import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +27,6 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await Locales.init(['en', 'es', 'ar', 'am']);
-
   runApp(const MyApp());
 }
 
@@ -43,6 +44,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ExplorBloc(),
         ),
+        BlocProvider(
+          create: (context) => PopularBloc(),
        
       ],
       child: LocaleBuilder(
@@ -65,7 +68,6 @@ class MyApp extends StatelessWidget {
             '/settings': (context) => SettingScreen()
           },
         ),
-    
       ),
     );
   }
