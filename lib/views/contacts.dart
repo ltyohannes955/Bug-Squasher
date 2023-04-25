@@ -1,3 +1,4 @@
+import 'package:digital_business_card/model/model.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
@@ -5,8 +6,10 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'constant/text.dart';
+import 'package:digital_business_card/bloc/popular_bloc.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
@@ -20,6 +23,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: '#2B5B80'.toColor(),
+
       appBar: AppBar(
         backgroundColor: Color.fromARGB(225, 255, 255, 255),
         title: Text(
@@ -33,7 +37,7 @@ class _ContactsState extends State<Contacts> {
         elevation: 0,
         actions: [
           Container(
-              child: TextButton(
+            child: TextButton(
             onPressed: () {
               Navigator.pushNamed(context, "/settings");
             },
@@ -56,8 +60,17 @@ class _ContactsState extends State<Contacts> {
           )
         ],
       ),
-      extendBody:true,
-      body: 
+      extendBody: true,
+      body:  BlocBuilder<PopularBloc, PopularState>(
+        builder: (context, state) {
+          if (state is PopularInitial) {
+            BlocProvider.of<PopularBloc>(context).add(PopularEventFetch());
+          } else if (state is PopularLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is PopularSuccess) {
+            return
        SingleChildScrollView(
          child: Column(
           children: [
@@ -190,30 +203,55 @@ class _ContactsState extends State<Contacts> {
               ],
             ),
             Container(
-              height: 200.0,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      elevation: 25,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/eagle.jpg"),
-                              fit: BoxFit.cover,
+                  height: 150.0,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.Popular_items.length,
+                      itemBuilder: (BuildContext context, index) {
+                        Model popular = state.Popular_items[index];
+                        return Column(
+                          children: [
+                            Card(
+                              elevation: 25,
+                              color: '#91ABC2'.toColor(),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(popular.Image),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.199,
+                              ),
                             ),
-                            borderRadius: BorderRadius.all(Radius.circular(10))),
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: MediaQuery.of(context).size.height * 0.01,
-                      ),
-                    );
-                  }),
-            )
-          ],
-             ),
-       ),
-      bottomNavigationBar: gnav(),
-    );
-  }
-}
+                            Container(
+                              child: Text(
+                                "${popular.Name}\$",
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12),
+                              ),
+                            )
+                          ],
+                        );
+                      }),
+                )
+              ],
+            ));}
+             return Container();
+}), bottomNavigationBar: gnav());
+}}
+    
+           
+           
+      
+      
+
+
+                         
+         
+        

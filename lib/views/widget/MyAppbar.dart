@@ -1,13 +1,11 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
 
-
-class MyAppbar extends StatelessWidget implements PreferredSizeWidget{
-
-
+class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+
       
             backgroundColor: '#2B5B80'.toColor(),
             title:  Text(
@@ -41,8 +39,10 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget{
               )
             ],
           
+
     );
   }
+
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
