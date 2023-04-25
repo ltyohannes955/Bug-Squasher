@@ -1,6 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
+import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class Category extends StatelessWidget {
       child: Scaffold(
 
         appBar: MyAppbar(),
-        body: BlocBuilder<CatagoryBloc, CatagoryState>(
+        body:BlocBuilder<CatagoryBloc, CatagoryState>(
           builder: (context, state) {
             if (state is CatagoryInitial) {
               BlocProvider.of<CatagoryBloc>(context).add(CatagoryEventFetch());
@@ -32,8 +33,9 @@ class Category extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else if (state is CatagoryIsucsess) {
-              return Column(children: [
+              return  Column(children: [
                 Expanded(
+                  
                     flex: 5,
                     child: Column(
                       children: [
@@ -113,7 +115,8 @@ class Category extends StatelessWidget {
             return Container();
           },
         ),
-        drawer: MyDrawer(),
+       
+        bottomNavigationBar: gnav(),
       ),
     );
   }

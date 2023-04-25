@@ -78,7 +78,7 @@ class Explor_page extends StatelessWidget {
                                       child: Text(explor.workarea,
                                           selectionColor:
                                               Color.fromARGB(255, 0, 0, 0),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w700)),
                                     ),
@@ -89,7 +89,7 @@ class Explor_page extends StatelessWidget {
                                     child: Container(
                                       child: Text(explor.jobTYPE,
                                           selectionColor:
-                                              Color.fromARGB(255, 0, 0, 0),
+                                              const Color.fromARGB(255, 0, 0, 0),
                                           style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w700)),
@@ -181,7 +181,7 @@ class Explor_page extends StatelessWidget {
           return Container();
         },
       ),
-      drawer: MyDrawer(),
+      
     );
   }
 }

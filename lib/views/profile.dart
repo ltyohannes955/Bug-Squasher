@@ -1,4 +1,5 @@
 import 'package:digital_business_card/views/setup.dart';
+import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
@@ -83,8 +84,8 @@ class _profileState extends State<profile> {
                                   MediaQuery.of(context).size.width * .055),
                         ),
                         RichText(
-                            text:  const TextSpan(
-                                text: 'Work Area: ',
+                            text:  TextSpan(
+                                text: Locales.string(context,'work_area'),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
@@ -94,8 +95,8 @@ class _profileState extends State<profile> {
                                   style: TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
-                                text: 'Email: ',
+                            text:  TextSpan(
+                                text: Locales.string(context,'email'),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
@@ -105,8 +106,8 @@ class _profileState extends State<profile> {
                                   style: TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
-                                text: 'Phone NO: ',
+                            text: TextSpan(
+                                text: Locales.string(context,'phone_no'),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
@@ -116,8 +117,8 @@ class _profileState extends State<profile> {
                                   style: TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
-                                text: 'Job Type: ',
+                            text:  TextSpan(
+                                text: Locales.string(context,'job_type'),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
@@ -127,8 +128,8 @@ class _profileState extends State<profile> {
                                   style: TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text: const TextSpan(
-                                text: 'company: ',
+                            text:  TextSpan(
+                                text: Locales.string(context,'company'),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
@@ -153,11 +154,11 @@ class _profileState extends State<profile> {
                                           MediaQuery.of(context).size.width *
                                               .04),
                                 )),
+                            
                           ],
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
@@ -173,7 +174,9 @@ class _profileState extends State<profile> {
               color: Colors.white,
               size: MediaQuery.of(context).size.width * .1,
             )),
+            bottomNavigationBar: gnav(),
       ),
+      
     );
   }
 }

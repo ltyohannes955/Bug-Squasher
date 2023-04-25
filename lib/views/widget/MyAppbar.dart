@@ -8,8 +8,9 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
             backgroundColor: '#2B5B80'.toColor(),
-            title: const Text(
+            title:  Text(
               'DBC',
               style: TextStyle(
                   fontSize: 31.09,
@@ -17,15 +18,23 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget{
                   fontWeight: FontWeight.w700,
                   fontStyle: FontStyle.normal),
             ),
-            centerTitle: true,
+            
             actions: [
+              Container(
+                child: TextButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, "/settings");
+                  },
+                  child: Text("ENG", style: TextStyle(color: Colors.white),),
+                )
+              ),
               Container(
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/profile');
+                    Navigator.pushNamed(context, '/qr_code');
                   },
                   icon: const Icon(
-                    Icons.account_circle_outlined,
+                    Icons.qr_code_scanner,
                     size: 33,
                   ),
                 ),

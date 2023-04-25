@@ -1,5 +1,5 @@
 {
-    "localization": "Localization",
+
     "login": "Log in",
     "signup": "Sign Up",
     "email": "Email",
@@ -12,11 +12,15 @@
     "digital_business_card": "Digital Business Card",
     "menu": "Menu",
     "popular": "popular",
+    "work_area": "Work Area:",
+    "phone_no": "Phone No.:",
+    "job_type": "Job Type:",
+    "company": "Company:",
     "edit": "Edit",
     "about": "About",
     "catagory": "Catagory",
     "setting": "Setting",
-    "current language is: ": "Current laguage is: ",
+    "current": "Current laguage is: ",
     "language": "language",
     "welcome": "Welcome",
     "english": "English",

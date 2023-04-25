@@ -1,5 +1,5 @@
 {
-    "localization": "አካባቢያዊነት",
+
     "login": "ግባ",
     "signup": "ተመዝገብ",
     "email": "ኢሜይል",
@@ -12,11 +12,15 @@
     "digital_business_card": "ዲጂታል የንግድ ካርድ",
     "menu": "ማውጫ",
     "popular": "ታዋቂ",
+    "work_area": "የሥራ ክፍል:",
+    "phone_no": "ስልክ ቁጥር",
+    "job_type": "የስራ አይነት",
+    "company": "ኩባንያ",
     "edit": "አርትዕ",
     "about": "ስለ",
     "catagory": "ምድብ",
     "setting": "ቅንብር",
-    "current language is: ": "ወቅታዊ ቋንቋ ",
+    "current": "ወቅታዊ ቋንቋ ",
     "language": "ቋንቋ",
     "welcome": "እንኳን ደህና መጡ",
     "english": "እንግሊዝኛ ",

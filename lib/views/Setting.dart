@@ -1,3 +1,4 @@
+import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'constant/colors.dart';
@@ -8,34 +9,34 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  LocaleText('language'),backgroundColor:  '#2B5B80'.toColor() ,),
-    
+      appBar: AppBar(
+        title: LocaleText('language'),
+        backgroundColor: '#2B5B80'.toColor(),
+      ),
       body: Column(
         children: [
           ListTile(
-            onTap: () => Locales.change(context, 'en'),
-            title: LocaleText('english'),
+            onTap: () {Locales.change(context, 'en');Navigator.popAndPushNamed(context, '/contacts');},
+            title: Text('English'),
           ),
           ListTile(
-            title: const LocaleText('spanish'),
-            onTap: () => Locales.change(context, 'es')
-           
-            
-          ),
-          // to change language with Extension
+              title: const Text('Español'),
+              onTap: (){Locales.change(context, 'es');Navigator.popAndPushNamed(context, '/contacts');}),
+         
           ListTile(
-            title: const LocaleText('arabic'),
-            onTap: () => Locales.change(context, 'ar')
-          ),
-            ListTile(
-            title: const LocaleText('amharic'),
-            onTap: () => Locales.change(context, 'am')
-          ),
-          LocaleText('current_language_is: ' +
-              Locales.currentLocale(context)!.languageCode),
-          // Text('Current Locale: ' + context.currentLocale.languageCode), // with Extension
+              title: Text('عربي'), onTap: () {Locales.change(context, 'ar');Navigator.popAndPushNamed(context, '/contacts');},)
+,          ListTile(
+              title: Text('አማርኛ'),
+              onTap: () {
+                Locales.change(context, 'am');
+                Navigator.popAndPushNamed(context, '/contacts');
+              }),
+          LocaleText('current'),
+          Text(Locales.currentLocale(context)!.languageCode),
+          
         ],
       ),
+      bottomNavigationBar: gnav(),
     );
   }
 }

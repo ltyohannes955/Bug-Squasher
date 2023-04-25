@@ -9,10 +9,7 @@ ac purus.Quisque eget porta
 
 ut condimentum nibh. Nunc 
 dictum mauris leo,
-eget porttitor ex maximus ac.
-Donec vitae eros vulputate, 
-ultricies neque consectetur, 
-mollis sapien. ''',
+''',
   style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400),
 );
 
