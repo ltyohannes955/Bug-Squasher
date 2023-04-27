@@ -1,5 +1,4 @@
 import 'dart:isolate';
-
 import 'package:digital_business_card/utils/rive_utils.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/contacts.dart';
@@ -19,14 +18,14 @@ class _MyBottomNavState extends State<MyBottomNav> {
   RiveAsset selectedBottomNav = bottomNavs.first;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        margin: const EdgeInsets.symmetric(horizontal: 24),
-        decoration: BoxDecoration(
-          color: "#5E718B".toColor(),
-          borderRadius: const BorderRadius.all(Radius.circular(24)),
-        ),
+    return Container(
+      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(horizontal: 24),
+      decoration: BoxDecoration(
+        color: "#5E718B".toColor(),
+        borderRadius: const BorderRadius.all(Radius.circular(24)),
+      ),
+      child: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
