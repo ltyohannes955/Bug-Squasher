@@ -74,7 +74,7 @@ class Category extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           boxShadow: [
-                            const BoxShadow(
+                            BoxShadow(
                               color: Color.fromARGB(255, 179, 173, 173),
                               blurRadius: 17.0,
                               spreadRadius: 5,
