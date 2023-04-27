@@ -14,8 +14,8 @@ are,with anyone,wherever you go.
 );
 
 const Text b = Text(
-  '''Where great thinkers 
-        are made.
+  '''Where great 
+  thinkers are made.
 ''',
   style:
       TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
@@ -23,21 +23,21 @@ const Text b = Text(
 
 const Text c = Text(
   '''Like your favorite 
-    to find the one
+    to find the one.
 ''',
   style:
       TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text d = Text(
-  '''     Easily share your digital 
-          business card .
+  '''     Easily share your 
+      digital business card.
 ''',
   style:
       TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text e = Text(
-  '''         Adjustment to your 
-            comfort and need.
+  '''     Adjustment to your 
+        comfort and need.
     ''',
   style:
       TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
