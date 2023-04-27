@@ -5,7 +5,7 @@ import 'package:digital_business_card/auth_page.dart';
 import 'package:digital_business_card/bloc/popular_bloc.dart';
 
 import 'package:digital_business_card/views/Explor_page.dart';
-import 'package:digital_business_card/views/Setting.dart';
+
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/edit_card.dart';
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
             '/Contacts': (context) => Contacts(),
             '/Explor_page': (context) => Explor_page(),
             '/Personal': (context) => Personal(),
-            '/settings': (context) => SettingScreen(),
+         
                        
 
           },

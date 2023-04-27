@@ -1,4 +1,4 @@
-import 'package:digital_business_card/views/Setting.dart';
+
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/profile.dart';
@@ -29,7 +29,7 @@ class _BottomNavBarState extends State<gnav> {
       items: <Widget>[
         IconButton(
             onPressed: () {
-              Navigator.popAndPushNamed(context, '/contacts');
+              Navigator.popAndPushNamed(context, '/Contacts');
             },
             icon: Icon(Icons.home_outlined)),
         IconButton(

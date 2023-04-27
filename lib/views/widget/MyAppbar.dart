@@ -1,5 +1,8 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
+
+import 'language.dart';
 
 class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -21,9 +24,10 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
               Container(
                 child: TextButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, "/settings");
+                    showModalBottomSheet(
+                  context: context, builder: (BuildContext context) => language());
                   },
-                  child: Text("ENG", style: TextStyle(color: Colors.white),),
+                  child: LocaleText("language", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),),
                 )
               ),
               Container(

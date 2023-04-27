@@ -1,5 +1,9 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
+
+import 'widget/language.dart';
 
 class signUpscreen extends StatefulWidget {
   signUpscreen({super.key});
@@ -31,7 +35,7 @@ class _signUpscreenState extends State<signUpscreen> {
         context: context,
         builder: (context) {
           return const AlertDialog(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Color.fromARGB(255, 138, 8, 30),
             title: Center(
               child: Text(
                 'Passwords Dont Match! ',
@@ -47,6 +51,18 @@ class _signUpscreenState extends State<signUpscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color.fromARGB(224, 255, 255, 255),actions: [
+        Container(
+                child: TextButton(
+                  onPressed: (){
+                    showModalBottomSheet(
+                  context: context, builder: (BuildContext context) => language());
+                  },
+                  child: LocaleText("language", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),),
+                )
+              ),],),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -54,9 +70,9 @@ class _signUpscreenState extends State<signUpscreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: MediaQuery.of(context).size.height * .155),
-                Text(
-                  "Sign Up",
+                SizedBox(height: MediaQuery.of(context).size.height * .080),
+                LocaleText(
+                  "signup",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: MediaQuery.of(context).size.height * .055,
@@ -68,8 +84,8 @@ class _signUpscreenState extends State<signUpscreen> {
                 TextField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                      hintText: "Email",
+                  decoration:  InputDecoration(
+                      hintText: Locales.string(context,'email'),
                       prefixIcon: Icon(
                         Icons.mail,
                         color: Colors.black,
@@ -81,8 +97,8 @@ class _signUpscreenState extends State<signUpscreen> {
                 TextField(
                   controller: passwordController,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                      hintText: "Password",
+                  decoration:  InputDecoration(
+                      hintText: Locales.string(context,'password'),
                       prefixIcon: Icon(
                         Icons.lock,
                         color: Colors.black,
@@ -94,8 +110,8 @@ class _signUpscreenState extends State<signUpscreen> {
                 TextField(
                   controller: confirmPasswordController,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                      hintText: "Confirm Password",
+                  decoration:  InputDecoration(
+                      hintText: Locales.string(context,'confirm'),
                       prefixIcon: Icon(
                         Icons.key,
                         color: Colors.black,
@@ -113,8 +129,8 @@ class _signUpscreenState extends State<signUpscreen> {
                           borderRadius: BorderRadius.circular(8),
                           color: const Color.fromARGB(248, 10, 17, 121)),
                       child: const Center(
-                        child: Text(
-                          "Sign Up",
+                        child: LocaleText(
+                          "signup",
                           style: TextStyle(color: Colors.white, fontSize: 18.0),
                         ),
                       ),
@@ -126,7 +142,7 @@ class _signUpscreenState extends State<signUpscreen> {
                     onPressed: () {
                       Navigator.pushNamed(context, '/login');
                     },
-                    child: const Text("Already have an account?Register"))
+                    child: const LocaleText("already_have_an_account"))
               ]),
         ),
       ),
