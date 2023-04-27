@@ -1,0 +1,32 @@
+{
+
+    "login": "ግባ",
+    "signup": "ይመዝገቡ",
+    "email": "ኢሜይል",
+    "password": "የይለፍ ቃል",
+    "already_have_an_account": "መለያ አለህ? ግባ",
+    "don't_have_an_account?": "መለያ የለዎትም? ይመዝገቡ ",
+    "confirm": "የይለፍ ቃል አረጋግጥ",
+    "incorrect_email": "የተሳሳተ ኢሜይል",
+    "incorrect_password": "የተሳሳተ የይለፍ ቃል",
+    "digital_business_card": "ዲጂታል የንግድ ካርድ",
+    "menu": "ማውጫ",
+    "popular": "ታዋቂ",
+    "work_area": "የሥራ ክፍል:",
+    "phone_no": "ስልክ ቁጥር",
+    "job_type": "የስራ አይነት",
+    "company": "ኩባንያ",
+    "edit": "አርትዕ",
+    "about": "ስለ",
+    "catagory": "ምድብ",
+    "setting": "ቅንብር",
+    "current": "ወቅታዊ ቋንቋ ",
+    "language": "ቋንቋ",
+    "welcome": "እንኳን ደህና መጡ",
+    "english": "እንግሊዝኛ ",
+    "spanish": "ስፓንኛ",
+    "arabic": "አረብኛ",
+    "full_name": "ሙሉ ስም",
+
+    "amharic": "አማርኛ"
+}
