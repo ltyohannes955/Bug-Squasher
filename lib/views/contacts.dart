@@ -80,25 +80,24 @@ class _ContactsState extends State<Contacts> {
                           height: 230,
                           color: Colors.white,
                         ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 8.0,
-                                top: 15,
+                        Padding(
+                          padding: const EdgeInsets.only(right:10.0,top: 30,left: 10),
+                          child: Row(
+                            children: [
+                              
+                              Image.asset(
+                                  "assets/a.jpg",
+                                  fit: BoxFit.cover,
+                                  height: 150,
+                                  width: 130,
+                                ),
+                              
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .055,
                               ),
-                              child: Image.asset(
-                                "assets/a.jpg",
-                                fit: BoxFit.cover,
-                                height: 150,
-                                width: 130,
-                              ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * .07,
-                            ),
-                            a
-                          ],
+                              a
+                            ],
+                          ),
                         ),
                       ]),
                     )
@@ -192,7 +191,7 @@ class _ContactsState extends State<Contacts> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: LocaleText(
                         "Popular",
                         style: TextStyle(
