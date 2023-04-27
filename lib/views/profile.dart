@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import 'constant/colors.dart';
 
@@ -80,8 +81,8 @@ class _profileState extends State<profile> {
               
               
               if(state is profileSuccess){
-                List<Business_card> data = state.CardData;
-                if (data.isEmpty){
+                List<Business_card> card = state.CardData;
+                if (card.isEmpty){
                   return Center(
                     child: ElevatedButton(onPressed: (){
                       Navigator.pushNamed(context, "/setup");
@@ -92,124 +93,138 @@ class _profileState extends State<profile> {
                      child: Text("Add Card", style: TextStyle(color: '#2B5B80'.toColor()),)),
                   );
                 }
-                return Card(
+                return Column(
+                  children: [
+                    Card(
               elevation: 20,
               child: Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                height: MediaQuery.of(context).size.height * .3,
-                width: MediaQuery.of(context).size.width * .9,
-                child: Row(
-                  children: [
-                    Column(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    height: MediaQuery.of(context).size.height * .3,
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: Row(
                       children: [
-                        Icon(
-                          Icons.person,
-                          size: MediaQuery.of(context).size.height * .15,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          data[0].FullName,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * .055),
-                        ),
-                        RichText(
-
-                            text:  TextSpan(
-                                text: Locales.string(context,'work_area'),
-                                style: TextStyle(
-
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: data[0].workArea,
-                                  style: const TextStyle(color: Colors.grey))
-                            ])),
-                        RichText(
-                            text:  TextSpan(
-
-                                text: Locales.string(context,'email'),
-                                style: TextStyle(
-
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: data[0].email,
-                                  style: const TextStyle(color: Colors.grey))
-                            ])),
-                        RichText(
-
-                            text: TextSpan(
-                                text: Locales.string(context,'phone_no'),
-                                style: TextStyle(
-
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: data[0].phoneNO.toString(),
-                                  style: const TextStyle(color: Colors.grey))
-                            ])),
-                        RichText(
-                            text:  TextSpan(
-
-                                text: Locales.string(context,'job_type'),
-                                style: TextStyle(
-
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: data[0].jobType,
-                                  style: const TextStyle(color: Colors.grey))
-                            ])),
-                        RichText(
-                            text:  TextSpan(
-
-                                text: Locales.string(context,'company'),
-                                style: TextStyle(
-
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: data[0].company,
-                                  style: const TextStyle(color: Colors.grey))
-                            ])),
-                        Row(
+                        Column(
                           children: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "/edit_card");
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  primary: blue,
-                                ),
-                                child: LocaleText(
-                                  "edit",
-                                  style: TextStyle(
-                                      fontSize:
-                                          MediaQuery.of(context).size.width *
-                                              .04),
-                                )),
-                            
+                            Icon(
+                              Icons.person,
+                              size: MediaQuery.of(context).size.height * .15,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              card[0].FullName,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * .055),
+                            ),
+                            RichText(
+
+                                text:  TextSpan(
+                                    text: Locales.string(context,'work_area'),
+                                    style: TextStyle(
+
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    children: <TextSpan>[
+                                  TextSpan(
+                                      text: card[0].workArea,
+                                      style: const TextStyle(color: Colors.grey))
+                                ])),
+                            RichText(
+                                text:  TextSpan(
+
+                                    text: Locales.string(context,'email'),
+                                    style: TextStyle(
+
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    children: <TextSpan>[
+                                  TextSpan(
+                                      text: card[0].email,
+                                      style: const TextStyle(color: Colors.grey))
+                                ])),
+                            RichText(
+
+                                text: TextSpan(
+                                    text: Locales.string(context,'phone_no'),
+                                    style: TextStyle(
+
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    children: <TextSpan>[
+                                  TextSpan(
+                                      text: card[0].phoneNO.toString(),
+                                      style: const TextStyle(color: Colors.grey))
+                                ])),
+                            RichText(
+                                text:  TextSpan(
+
+                                    text: Locales.string(context,'job_type'),
+                                    style: TextStyle(
+
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    children: <TextSpan>[
+                                  TextSpan(
+                                      text: card[0].jobType,
+                                      style: const TextStyle(color: Colors.grey))
+                                ])),
+                            RichText(
+                                text:  TextSpan(
+
+                                    text: Locales.string(context,'company'),
+                                    style: TextStyle(
+
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    children: <TextSpan>[
+                                  TextSpan(
+                                      text: card[0].company,
+                                      style: const TextStyle(color: Colors.grey))
+                                ])),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, "/edit_card");
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: blue,
+                                    ),
+                                    child: LocaleText(
+                                      "edit",
+                                      style: TextStyle(
+                                          fontSize:
+                                              MediaQuery.of(context).size.width *
+                                                  .04),
+                                    )),
+                                
+                              ],
+                            ),
                           ],
                         ),
                       ],
                     ),
-                  ],
-                ),
               ),
-            );
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*.1,),
+            Container(
+              color: Colors.white,
+              child: QrImage(data: card[0].phoneNO.toString(),
+                        size: 300,
+                        embeddedImageStyle: QrEmbeddedImageStyle(size: Size(80, 80),
+                        color: Colors.white
+                        )
+                        ),
+            )
+                  ],
+                );
               }
               else if(state is profileLoading){
                 return const Center(
@@ -218,17 +233,6 @@ class _profileState extends State<profile> {
               }
               return Container();
             }),]),
-          
-        
-        floatingActionButton: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '');
-            },
-            icon: Icon(
-              Icons.qr_code,
-              color: Colors.white,
-              size: MediaQuery.of(context).size.width * .1,
-            )),
       ),
       
     );
