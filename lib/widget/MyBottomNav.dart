@@ -63,8 +63,8 @@ class _MyBottomNavState extends State<MyBottomNav> {
                                   onInit: (artboard) {
                                     StateMachineController controller =
                                         RiveUtils.getRiveController(artboard,
-                                            stateMachineName: bottomNavs[index]
-                                                .stateMachineName);
+                                            stateMachineName: 
+                                              bottomNavs[index].stateMachineName);
                                     bottomNavs[index].input =
                                         controller.findSMI("active") as SMIBool;
                                   },
@@ -113,7 +113,7 @@ class RiveAsset {
       required this.title,
       this.input});
 
-  set SetInput(SMIBool status) {
+  set setInput(SMIBool status) {
     input = status;
   }
 }
