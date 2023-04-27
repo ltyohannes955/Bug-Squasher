@@ -89,7 +89,6 @@ class Category extends StatelessWidget {
                 }),
           ),
         ]),
-        bottomNavigationBar: const MyBottomNav(),
       ),
     );
   }

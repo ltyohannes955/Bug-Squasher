@@ -233,7 +233,6 @@ class _edit_cardState extends State<edit_card> {
                 ))
           ],
         ),
-        bottomNavigationBar: const MyBottomNav(),
       ),
     );
   }
