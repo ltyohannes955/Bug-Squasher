@@ -2,6 +2,7 @@ import 'package:digital_business_card/utils/rive_utils.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/contacts.dart';
+import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
@@ -30,7 +31,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
         child = const Category();
         break;
       case 2:
-        child = const setup();
+        child = const profile();
         break;
     }
     return Scaffold(
