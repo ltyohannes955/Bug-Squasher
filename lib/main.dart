@@ -11,7 +11,7 @@ import 'package:digital_business_card/views/Explor_page.dart';
 
 
 
-import 'package:digital_business_card/views/Setting.dart';
+
 
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
