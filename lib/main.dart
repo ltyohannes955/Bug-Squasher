@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => MyBottomNav(),
-          '/Contacts': (context) => Contacts(),
+          '/': (context) => Contacts(),
           '/login': (context) => loginScreen(),
           '/signUp': (context) => signUpscreen(),
           '/setup': (context) => setup(),

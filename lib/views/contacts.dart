@@ -143,7 +143,7 @@ class _ContactsState extends State<Contacts> {
                       fontSize: 15),
                 ),
                 Container(
-                  height: 150.0,
+                  height: 200.0,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: state.Popular_items.length,
@@ -186,6 +186,7 @@ class _ContactsState extends State<Contacts> {
           return Container();
         },
       ),
+      bottomNavigationBar: const MyBottomNav(),
     );
   }
 }

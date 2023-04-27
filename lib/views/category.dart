@@ -1,3 +1,4 @@
+import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class Category extends StatelessWidget {
       left: true,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(248, 10, 17, 121),
+          backgroundColor: const Color.fromARGB(248, 10, 17, 121),
           title: const Text(
             'DBC',
             style: TextStyle(
@@ -43,7 +44,7 @@ class Category extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 210, 0),
                     child: Container(
-                      child: Text(
+                      child: const Text(
                         'Catagory',
                         style: TextStyle(
                             fontSize: 20.08,
@@ -73,37 +74,22 @@ class Category extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           boxShadow: [
-                            BoxShadow(
+                            const BoxShadow(
                               color: Color.fromARGB(255, 179, 173, 173),
                               blurRadius: 17.0,
                               spreadRadius: 5,
                               offset: Offset(3, 3),
                             ),
                           ],
-                          color: Color.fromARGB(255, 124, 124, 122),
+                          color: const Color.fromARGB(255, 124, 124, 122),
                           borderRadius: BorderRadius.circular(15)),
-                      child: Text('hello'),
+                      child: const Text('hello'),
                     ),
                   );
                 }),
           ),
-          BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                label: "Scanner",
-                icon: Icon(Icons.qr_code_scanner),
-              ),
-              BottomNavigationBarItem(
-                label: "Categories",
-                icon: Icon(Icons.book),
-              ),
-              BottomNavigationBarItem(
-                label: "Qr Codes",
-                icon: Icon(Icons.qr_code),
-              ),
-            ],
-          )
         ]),
+        bottomNavigationBar: const MyBottomNav(),
       ),
     );
   }
