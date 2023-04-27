@@ -1,3 +1,4 @@
+import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
@@ -21,7 +22,6 @@ class Category extends StatelessWidget {
       right: true,
       left: true,
       child: Scaffold(
-
         appBar: MyAppbar(),
         body:BlocBuilder<CatagoryBloc, CatagoryState>(
           builder: (context, state) {
@@ -106,15 +106,12 @@ class Category extends StatelessWidget {
                           ),
                         );
                       }),
-
-
                 ),
               ]);
             }
             return Container();
           },
         ),
-       
       ),
     );
   }

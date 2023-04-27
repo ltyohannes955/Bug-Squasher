@@ -3,7 +3,6 @@ import 'package:digital_business_card/bloc/profile_bloc.dart';
 import 'package:digital_business_card/bloc/popular_bloc.dart';
 import 'package:digital_business_card/views/Explor_page.dart';
 
-
 import 'package:digital_business_card/views/contacts.dart';
 import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/edit_card.dart';
@@ -13,6 +12,7 @@ import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/qr_scanner.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
+import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
@@ -48,14 +48,11 @@ class MyApp extends StatelessWidget {
           create: (context) => ExplorBloc(),
         ),
         BlocProvider(
-
           create: (context) => PopularBloc(),
-          ),
-          BlocProvider(
+        ),
+        BlocProvider(
           create: (context) => ProfileBloc(),
         ),
-
-       
       ],
       child: LocaleBuilder(
         builder: (locale) => MaterialApp(
@@ -71,13 +68,10 @@ class MyApp extends StatelessWidget {
             '/profile': (context) => profile(),
             '/edit_card': (context) => edit_card(),
             '/catagory': (context) => Category(),
-            '/Contacts': (context) => Contacts(),
+            '/MybottomNav': (context) => MyBottomNav(),
             '/Explor_page': (context) => Explor_page(),
             '/Personal': (context) => Personal(),
-
-            
-            '/Qrcode' :(context) => QRScanner(),
-
+            '/Qrcode': (context) => QRScanner(),
           },
         ),
       ),
