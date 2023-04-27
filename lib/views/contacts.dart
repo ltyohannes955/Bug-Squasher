@@ -47,7 +47,7 @@ class _ContactsState extends State<Contacts> {
             Container(
               child: IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/qr_code');
+                  Navigator.pushNamed(context, '/Qrcode');
                 },
                 icon: const Icon(
                   Icons.qr_code_scanner,
