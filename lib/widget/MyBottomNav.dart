@@ -35,10 +35,12 @@ class _MyBottomNavState extends State<MyBottomNav> {
                 (index) => GestureDetector(
                       onTap: () {
                         if (index == 0) {
-                          Navigator.pushNamed(context, "/catagorys");
+                          Navigator.pushNamed(context, '/');
                         } else if (index == 1) {
+                          Navigator.pushNamed(context, "/catagorys");
+                        } else if (index == 2) {
                           Navigator.pushNamed(context, "/edit_card");
-                        } else {
+                        } else if (index == 3) {
                           Navigator.pushNamed(context, "/setup");
                         }
                         bottomNavs[index].input!.change(true);
@@ -125,19 +127,11 @@ class RiveAsset {
 
 List<RiveAsset> bottomNavs = [
   RiveAsset("assets/RiveAssets/icons.riv",
-      artboard: "CHAT", stateMachineName: "CHAT_Interactivity", title: "Chat"),
-  RiveAsset("assets/RiveAssets/icons.riv",
-      artboard: "SEARCH",
-      stateMachineName: "SEARCH_Interactivity",
-      title: "Search"),
-  RiveAsset("assets/RiveAssets/icons.riv",
-      artboard: "TIMER",
-      stateMachineName: "TIMER_Interactivity",
-      title: "Chat"),
-  RiveAsset("assets/RiveAssets/icons.riv",
-      artboard: "BELL",
-      stateMachineName: "BELL_Interactivity",
-      title: "Notification"),
+      artboard: "HOME", stateMachineName: "HOME_interactivity", title: "Home"),
+  RiveAsset("assets/RiveAssets/icons2.riv",
+      artboard: "LIKE/STAR",
+      stateMachineName: "STAR_Interactivity",
+      title: "Like/Star"),
   RiveAsset("assets/RiveAssets/icons.riv",
       artboard: "USER",
       stateMachineName: "USER_Interactivity",

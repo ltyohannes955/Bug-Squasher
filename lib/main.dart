@@ -7,7 +7,6 @@ import 'package:digital_business_card/views/login.dart';
 import 'package:digital_business_card/views/profile.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
-import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

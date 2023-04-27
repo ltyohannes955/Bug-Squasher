@@ -19,7 +19,7 @@ class _ContactsState extends State<Contacts> {
     return Scaffold(
       backgroundColor: '#2B5B80'.toColor(),
       appBar: AppBar(
-        backgroundColor: '#2B5B80'.toColor(),
+        backgroundColor: Colors.black87,
         elevation: 25,
         foregroundColor: Colors.white,
         title: const Text("Digital Business Card"),
