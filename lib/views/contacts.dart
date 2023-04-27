@@ -5,7 +5,6 @@ import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/language.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
-import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
@@ -247,7 +246,7 @@ class _ContactsState extends State<Contacts> {
           return Container();
           
         }),
-        bottomNavigationBar: gnav());
+        );
         
   }
 
