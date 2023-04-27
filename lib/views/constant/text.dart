@@ -10,15 +10,15 @@ are,with anyone,wherever you go.
          digital business card.
 
 ''',
-  style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600),
+  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
 );
 
 const Text b = Text(
-  '''Where great 
-  thinkers are made.
+  '''Where great thinkers
+      are made.
 ''',
   style:
-      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
 
 const Text c = Text(
@@ -26,21 +26,21 @@ const Text c = Text(
     to find the one.
 ''',
   style:
-      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text d = Text(
-  '''     Easily share your 
+  '''       Easily share your 
       digital business card.
 ''',
   style:
-      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text e = Text(
   '''     Adjustment to your 
-        comfort and need.
+      comfort and need.
     ''',
   style:
-      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text f = Text(
   '''Lorem ipsum dolor sit amet, consectetur adipiscingelit. Nunc quis 
