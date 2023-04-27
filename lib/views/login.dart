@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_locales/flutter_locales.dart';
 
+import 'widget/language.dart';
+
 class loginScreen extends StatefulWidget {
   loginScreen({super.key});
 
@@ -32,19 +34,28 @@ class _loginScreenState extends State<loginScreen> {
       // pop the loading circle
       Navigator.pop(context);
       // WRONG EMAIL
-      showErroMessage(e.code);
+       if (e.code == 'user-not-found') {
+        // show error to user
+        wrongEmailMessage();
+      }
+
+      // WRONG PASSWORD
+      else if (e.code == 'wrong-password') {
+        // show error to user
+        wrongPasswordMessage();
+      }
     }
   }
 
   // wrong email message popup
-  void showErroMessage(String message) {
+  void wrongEmailMessage() {
     showDialog(
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Color.fromARGB(255, 136, 19, 54),
           title: LocaleText(
-            'Incorrect Email',
+            'incorrect_email',
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -60,7 +71,7 @@ class _loginScreenState extends State<loginScreen> {
         return const AlertDialog(
           backgroundColor: Color.fromARGB(255, 136, 19, 54),
           title: LocaleText(
-            'Incorrect password',
+            'incorrect_password',
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -71,6 +82,18 @@ class _loginScreenState extends State<loginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color.fromARGB(224, 255, 255, 255),actions: [
+        Container(
+                child: TextButton(
+                  onPressed: (){
+                    showModalBottomSheet(
+                  context: context, builder: (BuildContext context) => language());
+                  },
+                  child: LocaleText("language", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),),
+                )
+              ),],),
         body: Padding(
       padding: EdgeInsets.all(MediaQuery.of(context).size.height * .030),
       child: SingleChildScrollView(
@@ -78,7 +101,7 @@ class _loginScreenState extends State<loginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * .155),
+            SizedBox(height: MediaQuery.of(context).size.height * .080),
             LocaleText(
               "login",
               style: TextStyle(
@@ -92,8 +115,8 @@ class _loginScreenState extends State<loginScreen> {
             TextField(
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                  hintText: "User Email",
+              decoration:  InputDecoration(
+                  hintText: Locales.string(context,'email'),
                   prefixIcon: Icon(
                     Icons.mail,
                     color: Colors.black,
@@ -105,8 +128,8 @@ class _loginScreenState extends State<loginScreen> {
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: const InputDecoration(
-                  hintText: "Password",
+              decoration:  InputDecoration(
+                  hintText: Locales.string(context,'password'),
                   prefixIcon: Icon(
                     Icons.lock,
                     color: Colors.black,
@@ -138,7 +161,6 @@ class _loginScreenState extends State<loginScreen> {
                   Navigator.pushNamed(context, '/signUp');
                 },
                 child: LocaleText("don't_have_an_Account?")),
-                ElevatedButton(onPressed:(){Navigator.pushNamed(context, '/settings');} ,child: Icon(Icons.language_outlined,), ),
                 
           ],
         ),

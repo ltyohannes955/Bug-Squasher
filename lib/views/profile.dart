@@ -2,8 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:digital_business_card/bloc/profile_bloc.dart';
 import 'package:digital_business_card/model/business_card.dart';
 import 'package:digital_business_card/views/setup.dart';
+
+import 'package:digital_business_card/views/widget/gNav.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
@@ -118,9 +122,11 @@ class _profileState extends State<profile> {
                                   MediaQuery.of(context).size.width * .055),
                         ),
                         RichText(
-                            text:   TextSpan(
-                                text: 'Work Area: ',
-                                style: const TextStyle(
+
+                            text:  TextSpan(
+                                text: Locales.string(context,'work_area'),
+                                style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
@@ -130,8 +136,10 @@ class _profileState extends State<profile> {
                             ])),
                         RichText(
                             text:  TextSpan(
-                                text: 'Email: ',
-                                style: const TextStyle(
+
+                                text: Locales.string(context,'email'),
+                                style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
@@ -140,9 +148,11 @@ class _profileState extends State<profile> {
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
-                            text:  TextSpan(
-                                text: 'Phone NO: ',
-                                style: const TextStyle(
+
+                            text: TextSpan(
+                                text: Locales.string(context,'phone_no'),
+                                style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
@@ -152,8 +162,10 @@ class _profileState extends State<profile> {
                             ])),
                         RichText(
                             text:  TextSpan(
-                                text: 'Job Type: ',
-                                style: const TextStyle(
+
+                                text: Locales.string(context,'job_type'),
+                                style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
@@ -163,8 +175,10 @@ class _profileState extends State<profile> {
                             ])),
                         RichText(
                             text:  TextSpan(
-                                text: 'company: ',
-                                style: const TextStyle(
+
+                                text: Locales.string(context,'company'),
+                                style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
@@ -188,11 +202,11 @@ class _profileState extends State<profile> {
                                           MediaQuery.of(context).size.width *
                                               .04),
                                 )),
+                            
                           ],
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
@@ -216,7 +230,9 @@ class _profileState extends State<profile> {
               color: Colors.white,
               size: MediaQuery.of(context).size.width * .1,
             )),
+            bottomNavigationBar: gnav(),
       ),
+      
     );
   }
 }
