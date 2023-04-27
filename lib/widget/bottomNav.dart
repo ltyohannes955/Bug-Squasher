@@ -61,7 +61,7 @@ class _bottomNavState extends State<bottomNav> {
           Icon(Icons.perm_identity, size: 30, color: Colors.white),
         ],
         color: Colors.blueAccent,
-        buttonBackgroundColor: Colors.amberAccent,
+        buttonBackgroundColor: Colors.black,
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
