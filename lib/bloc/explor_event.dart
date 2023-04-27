@@ -11,7 +11,7 @@ class ExplorEventFetch extends ExplorEvent {
 }
 
 class ExplorerEventFetch extends ExplorEvent {
-   final String catagory;
+  final String catagory;
   ExplorerEventFetch({required this.catagory});
   @override
   List<Object> get props => [];

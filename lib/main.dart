@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ExplorBloc(),
         ),
-       
       ],
       child: LocaleBuilder(
         builder: (locale) => MaterialApp(
@@ -52,7 +51,7 @@ class MyApp extends StatelessWidget {
           locale: locale,
           debugShowCheckedModeBanner: false,
           routes: {
-            '/': (context) => AuthPage(),
+            '/': (context) => Personal(),
             '/login': (context) => loginScreen(),
             '/signUp': (context) => signUpscreen(),
             '/setup': (context) => setup(),
@@ -65,7 +64,6 @@ class MyApp extends StatelessWidget {
             '/settings': (context) => SettingScreen()
           },
         ),
-    
       ),
     );
   }
