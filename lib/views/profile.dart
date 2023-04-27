@@ -3,7 +3,6 @@ import 'package:digital_business_card/bloc/profile_bloc.dart';
 import 'package:digital_business_card/model/business_card.dart';
 import 'package:digital_business_card/views/setup.dart';
 
-import 'package:digital_business_card/views/widget/gNav.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -230,7 +229,6 @@ class _profileState extends State<profile> {
               color: Colors.white,
               size: MediaQuery.of(context).size.width * .1,
             )),
-            bottomNavigationBar: gnav(),
       ),
       
     );

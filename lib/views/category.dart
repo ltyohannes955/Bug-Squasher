@@ -1,7 +1,6 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/MyDrawer.dart';
-import 'package:digital_business_card/views/widget/gNav.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -116,7 +115,6 @@ class Category extends StatelessWidget {
           },
         ),
        
-        bottomNavigationBar: gnav(),
       ),
     );
   }
