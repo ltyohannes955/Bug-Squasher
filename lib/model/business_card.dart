@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Business_card{
   String id;
   String FullName;
@@ -32,17 +34,17 @@ Business_card({
         );
   }
 
-  factory Business_card.historyfromJson(Map<String, dynamic> parsedJson) {
-    return Business_card(
-      id: parsedJson["id"],
-      FullName: parsedJson["FullName"],
-      workArea: parsedJson["workArea"],
-      email: parsedJson["email"],
-      phoneNO: parsedJson["phoneNO"],
-      jobType: parsedJson["jobType"],
-      company: parsedJson["company"],
-    );
-  }
+  // factory Business_card.historyfromJson(Map<String, dynamic> parsedJson) {
+  //   return Business_card(
+  //     id: parsedJson["id"],
+  //     FullName: parsedJson["FullName"],
+  //     workArea: parsedJson["workArea"],
+  //     email: parsedJson["email"],
+  //     phoneNO: parsedJson["phoneNO"],
+  //     jobType: parsedJson["jobType"],
+  //     company: parsedJson["company"],
+  //   );
+  // }
 
   toJson() {
     Map<String, dynamic> json = {};
@@ -56,12 +58,25 @@ Business_card({
     return json;
   }
 
-  static List historyList(List card) {
-    List cards = [];
-    for (var i = 0; i < card.length; i++) {
-      cards.add(Business_card.historyfromJson(card[i]));
-    }
-    return cards;
+  // static List historyList(List card) {
+  //   List cards = [];
+  //   for (var i = 0; i < card.length; i++) {
+  //     cards.add(Business_card.historyfromJson(card[i]));
+  //   }
+  //   return cards;
+  // }
+
+  static Business_card fromSnapshot(DocumentSnapshot snap){
+    Business_card business_card = Business_card(
+      id: snap["id"], 
+      FullName: snap["FullName"], 
+      workArea: snap["workArea"], 
+      email: snap["email"], 
+      phoneNO: snap["phoneNO"], 
+      jobType: snap["jobType"], 
+      company: snap["company"]);
+
+      return business_card;
   }
 
 }

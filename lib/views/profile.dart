@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:digital_business_card/bloc/profile_bloc.dart';
+import 'package:digital_business_card/model/business_card.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
 import 'constant/colors.dart';
@@ -16,12 +19,19 @@ class profile extends StatefulWidget {
 
 class _profileState extends State<profile> {
   final auth = FirebaseAuth.instance;
+
+  @override
+  void initState(){
+    super.initState();
+    BlocProvider.of<ProfileBloc>(context).add(GetCard());
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: '#2B5B80'.toColor(),
-        body: Column(
+        body: 
+        Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,20 +61,35 @@ class _profileState extends State<profile> {
               ],
             ),
             Center(
-                child: LocaleText(
-              'digital_business_card',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: MediaQuery.of(context).size.height * .055),
-            )
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: LocaleText(
+                              'digital_business_card',
+                              style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: MediaQuery.of(context).size.height * .055),
+                            ),
+                )
             ),
-            StreamBuilder(
-              stream: FirebaseFirestore.instance.collection("UserCards").where("id" ,isEqualTo: auth.currentUser!.uid).snapshots(),
-              builder: (context,AsyncSnapshot<QuerySnapshot> snapshot){
-                if(snapshot.hasData){
-                  List data = snapshot.data!.docs;
-                  return Card(
+            BlocBuilder<ProfileBloc, ProfileState>
+            (builder: (context, state){
+              
+              
+              if(state is profileSuccess){
+                List<Business_card> data = state.CardData;
+                if (data.isEmpty){
+                  return Center(
+                    child: ElevatedButton(onPressed: (){
+                      Navigator.pushNamed(context, "/setup");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white
+                    ),
+                     child: Text("Add Card", style: TextStyle(color: '#2B5B80'.toColor()),)),
+                  );
+                }
+                return Card(
               elevation: 20,
               child: Container(
                 decoration:
@@ -86,7 +111,7 @@ class _profileState extends State<profile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          data[0]['FullName'],
+                          data[0].FullName,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize:
@@ -100,7 +125,7 @@ class _profileState extends State<profile> {
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: data[0]["workArea"],
+                                  text: data[0].workArea,
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
@@ -111,7 +136,7 @@ class _profileState extends State<profile> {
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: data[0]["email"],
+                                  text: data[0].email,
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
@@ -122,7 +147,7 @@ class _profileState extends State<profile> {
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: data[0]["phoneNO"].toString(),
+                                  text: data[0].phoneNO.toString(),
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
@@ -133,7 +158,7 @@ class _profileState extends State<profile> {
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: data[0]["jobType"],
+                                  text: data[0].jobType,
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
@@ -144,7 +169,7 @@ class _profileState extends State<profile> {
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: data[0]["company"],
+                                  text: data[0].company,
                                   style: const TextStyle(color: Colors.grey))
                             ])),
                         Row(
@@ -172,13 +197,16 @@ class _profileState extends State<profile> {
                 ),
               ),
             );
-                }
-                return Container();
-
               }
-              )
-          ],
-        ),
+              else if(state is profileLoading){
+                return const Center(
+                  child: CircularProgressIndicator(color: Colors.amber),
+                );
+              }
+              return Container();
+            }),]),
+          
+        
         floatingActionButton: IconButton(
             onPressed: () {
               Navigator.pushNamed(context, '');
