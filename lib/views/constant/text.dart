@@ -14,37 +14,33 @@ are,with anyone,wherever you go.
 );
 
 const Text b = Text(
-  '''                  were great 
-          thinkers are made
-
+  '''Where great thinkers 
+        are made.
 ''',
   style:
-      TextStyle(fontSize: 9, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 
 const Text c = Text(
-  '''                    like 
-            your favorite 
-          to find the one
-
+  '''Like your favorite 
+    to find the one
 ''',
   style:
-      TextStyle(fontSize: 9, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text d = Text(
-  '''            share this 
-    with companinons 
-
+  '''     Easily share your digital 
+          business card .
 ''',
   style:
-      TextStyle(fontSize: 9, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text e = Text(
-  '''          Setting 
-    for personal use
-''',
+  '''         Adjustment to your 
+            comfort and need.
+    ''',
   style:
-      TextStyle(fontSize: 9, color: Colors.white, fontWeight: FontWeight.bold),
+      TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
 );
 const Text f = Text(
   '''Lorem ipsum dolor sit amet, consectetur adipiscingelit. Nunc quis 
