@@ -1,6 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:digital_business_card/bloc/profile_bloc.dart';
+import 'package:digital_business_card/model/business_card.dart';
 import 'package:digital_business_card/views/setup.dart';
+
 import 'package:digital_business_card/views/widget/gNav.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
 import 'constant/colors.dart';
@@ -13,12 +22,20 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
+  final auth = FirebaseAuth.instance;
+
+  @override
+  void initState(){
+    super.initState();
+    BlocProvider.of<ProfileBloc>(context).add(GetCard());
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: '#2B5B80'.toColor(),
-        body: Column(
+        body: 
+        Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,8 +53,8 @@ class _profileState extends State<profile> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
+                const Padding(
+                  padding: EdgeInsets.all(15.0),
                   child: IconButton(
                       onPressed: signout,
                       icon: Icon(
@@ -48,14 +65,35 @@ class _profileState extends State<profile> {
               ],
             ),
             Center(
-                child: LocaleText(
-              'digital_business_card',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: MediaQuery.of(context).size.height * .055),
-            )),
-            Card(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: LocaleText(
+                              'digital_business_card',
+                              style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: MediaQuery.of(context).size.height * .055),
+                            ),
+                )
+            ),
+            BlocBuilder<ProfileBloc, ProfileState>
+            (builder: (context, state){
+              
+              
+              if(state is profileSuccess){
+                List<Business_card> data = state.CardData;
+                if (data.isEmpty){
+                  return Center(
+                    child: ElevatedButton(onPressed: (){
+                      Navigator.pushNamed(context, "/setup");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white
+                    ),
+                     child: Text("Add Card", style: TextStyle(color: '#2B5B80'.toColor()),)),
+                  );
+                }
+                return Card(
               elevation: 20,
               child: Container(
                 decoration:
@@ -77,66 +115,76 @@ class _profileState extends State<profile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Abebe Kebede',
+                          data[0].FullName,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize:
                                   MediaQuery.of(context).size.width * .055),
                         ),
                         RichText(
+
                             text:  TextSpan(
                                 text: Locales.string(context,'work_area'),
                                 style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'Engineering',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0].workArea,
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
                             text:  TextSpan(
+
                                 text: Locales.string(context,'email'),
                                 style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'test@gmail.com',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0].email,
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
+
                             text: TextSpan(
                                 text: Locales.string(context,'phone_no'),
                                 style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: '0912345678',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0].phoneNO.toString(),
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
                             text:  TextSpan(
+
                                 text: Locales.string(context,'job_type'),
                                 style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'CEO',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0].jobType,
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         RichText(
                             text:  TextSpan(
+
                                 text: Locales.string(context,'company'),
                                 style: TextStyle(
+
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                                 children: <TextSpan>[
                               TextSpan(
-                                  text: 'ABC .PLC',
-                                  style: TextStyle(color: Colors.grey))
+                                  text: data[0].company,
+                                  style: const TextStyle(color: Colors.grey))
                             ])),
                         Row(
                           children: [
@@ -162,9 +210,17 @@ class _profileState extends State<profile> {
                   ],
                 ),
               ),
-            )
-          ],
-        ),
+            );
+              }
+              else if(state is profileLoading){
+                return const Center(
+                  child: CircularProgressIndicator(color: Colors.amber),
+                );
+              }
+              return Container();
+            }),]),
+          
+        
         floatingActionButton: IconButton(
             onPressed: () {
               Navigator.pushNamed(context, '');
