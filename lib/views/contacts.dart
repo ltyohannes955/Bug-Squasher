@@ -224,12 +224,12 @@ class _ContactsState extends State<Contacts> {
                                         BorderRadius.all(Radius.circular(10))),
                                 width: MediaQuery.of(context).size.width * 0.5,
                                 height:
-                                    MediaQuery.of(context).size.height * 0.199,
+                                    MediaQuery.of(context).size.height * 0.18,
                               ),
                             ),
                             Container(
                               child: Text(
-                                "${popular.Name}\$",
+                                "${popular.Name}",
                                 style: const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,

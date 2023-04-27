@@ -73,6 +73,7 @@ class _profileState extends State<profile> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: MediaQuery.of(context).size.height * .055),
+                    textAlign: TextAlign.center,
                             ),
                 )
             ),
@@ -213,12 +214,12 @@ class _profileState extends State<profile> {
                     ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*.1,),
+            SizedBox(height: MediaQuery.of(context).size.height*.05,),
             Container(
               color: Colors.white,
               child: QrImage(data: card[0].phoneNO.toString(),
-                        size: 300,
-                        embeddedImageStyle: QrEmbeddedImageStyle(size: Size(80, 80),
+                        size: MediaQuery.of(context).size.height*.25,
+                        embeddedImageStyle: QrEmbeddedImageStyle(size: Size(40, 40),
                         color: Colors.white
                         )
                         ),
