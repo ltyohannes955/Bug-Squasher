@@ -8,12 +8,3 @@ class PersonalEventFetch extends PersonalEvent {
   @override
   List<Object> get props => [];
 }
-
-class PersonalEventsFetch extends PersonalEvent {
-  final String personal;
-  PersonalEventsFetch({required this.personal});
-  @override
-  List<Object> get props => [];
-
-  get data => personal;
-}

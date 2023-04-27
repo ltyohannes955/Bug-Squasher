@@ -15,20 +15,12 @@ class PersonalBloc extends Bloc<PersonalEvent, PersonalState> {
   final _service = Service();
 
   PersonalBloc() : super(PersonalInitial()) {
-    on<PersonalEventFetch>((event, emit) async {
+    on<PersonalEvent>((event, emit) async {
       emit(Personalloading());
       try {
-        List filter = [];
-        final activity = await apiServiceProvider.fetchexplor();
-        
-        for (var element in activity!) {
-          if (element.workarea == event.data.toString()) {
-            filter.add(element);
-            continue;
-          }
-        }
+        final activity = await apiServiceProvider.fetchActivity();
         emit(Personalsuccess(
-          personal_list: filter,
+          personal_list: activity!,
         ));
       } catch (e) {
         print(e);

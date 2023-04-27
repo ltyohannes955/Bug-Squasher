@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:digital_business_card/bloc/explor_bloc.dart';
+import 'package:digital_business_card/bloc/personal_bloc.dart';
 import 'package:digital_business_card/service/apiservice.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/constant/text.dart';
@@ -20,7 +21,6 @@ class Personal extends StatefulWidget {
 }
 
 class _PersonalState extends State<Personal> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,17 +36,17 @@ class _PersonalState extends State<Personal> {
                 },
                 icon: const Icon(Icons.account_circle_outlined))
           ]),
-      body: BlocBuilder<ExplorBloc, ExplorState>(
+      body: BlocBuilder<PersonalBloc, PersonalState>(
         builder: (context, state) {
-          if (state is ExplorInitial) {
-            BlocProvider.of<ExplorBloc>(context).add(ExplorEventFetch());
-          } else if (state is Explorloding) {
+          if (state is PersonalInitial) {
+            BlocProvider.of<PersonalBloc>(context).add(PersonalEventFetch());
+          } else if (state is Personalloading) {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state is ExplorIsucsess) {
+          } else if (state is Personalsuccess) {
             int index = 0;
-            final explor = state.explor_list[index];
+            final persona = state.personal_list[index];
             return SafeArea(
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -66,7 +66,7 @@ class _PersonalState extends State<Personal> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(25),
                             child: Image.network(
-                              explor.image_E,
+                              persona.image_E,
                               fit: BoxFit.cover,
                               height: MediaQuery.of(context).size.height * 0.35,
                               width: MediaQuery.of(context).size.width * 0.3,
@@ -78,14 +78,14 @@ class _PersonalState extends State<Personal> {
                           Column(
                             children: [
                               Text(
-                                explor.fullNAME,
+                                persona.fullNAME,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                explor.workarea,
+                                persona.workarea,
                                 style: TextStyle(color: Colors.white),
                               ),
                               Row(
