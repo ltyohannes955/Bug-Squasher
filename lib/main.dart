@@ -1,3 +1,4 @@
+import 'package:digital_business_card/bloc/profile_bloc.dart';
 import 'package:digital_business_card/bloc/popular_bloc.dart';
 import 'package:digital_business_card/views/Explor_page.dart';
 import 'package:digital_business_card/views/Setting.dart';
@@ -47,7 +48,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PopularBloc(),
-          )
+          ),
+          BlocProvider(
+          create: (context) => ProfileBloc(),
+        ),
        
       ],
       child: LocaleBuilder(
