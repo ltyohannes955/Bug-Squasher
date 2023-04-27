@@ -253,7 +253,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
-
   mobile_scanner:
     dependency: "direct main"
     description:
@@ -262,7 +261,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
-
   nested:
     dependency: transitive
     description:
@@ -271,7 +269,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-
   path:
     dependency: transitive
     description:
@@ -344,7 +341,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-
+  process:
+    dependency: transitive
+    description:
+      name: process
+      sha256: "53fd8db9cec1d37b0574e12f07520d582019cb6c44abf5479a01505099a34a09"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.4"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.5"
   qr:
     dependency: transitive
     description:
@@ -369,23 +381,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-
-  process:
-    dependency: transitive
-    description:
-      name: process
-      sha256: "53fd8db9cec1d37b0574e12f07520d582019cb6c44abf5479a01505099a34a09"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.4"
-  provider:
-    dependency: transitive
-    description:
-      name: provider
-      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.5"
   shared_preferences:
     dependency: transitive
     description:
@@ -442,7 +437,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-
   sky_engine:
     dependency: transitive
     description: flutter
@@ -594,6 +588,4 @@ packages:
     version: "1.0.0"
 sdks:
   dart: ">=2.19.6 <3.0.0"
-
   flutter: ">=3.3.0"
-
