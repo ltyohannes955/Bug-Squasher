@@ -45,15 +45,18 @@ class _ContactsState extends State<Contacts> {
                 style: TextStyle(color: Color.fromARGB(255, 3, 3, 3)),
               ),
             )),
-            Container(
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/Qrcode');
-                },
-                icon: const Icon(
-                  Icons.qr_code_scanner,
-                  size: 33,
-                  color: Colors.black,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/Qrcode');
+                  },
+                  icon: const Icon(
+                    Icons.qr_code_scanner,
+                    size: 33,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             )
@@ -107,7 +110,7 @@ class _ContactsState extends State<Contacts> {
                   height: MediaQuery.of(context).size.height * .03,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
