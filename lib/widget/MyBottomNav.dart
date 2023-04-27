@@ -1,7 +1,9 @@
 import 'dart:isolate';
 import 'package:digital_business_card/utils/rive_utils.dart';
+import 'package:digital_business_card/views/category.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/contacts.dart';
+import 'package:digital_business_card/views/edit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -16,8 +18,22 @@ class MyBottomNav extends StatefulWidget {
 
 class _MyBottomNavState extends State<MyBottomNav> {
   RiveAsset selectedBottomNav = bottomNavs.first;
+  int page = 0;
   @override
   Widget build(BuildContext context) {
+    Widget child = const Contacts();
+
+    switch (page) {
+      case 0:
+        child = const Contacts();
+        break;
+      case 1:
+        child = const Category();
+        break;
+      case 2:
+        child = const edit_card();
+        break;
+    }
     return Container(
       padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.symmetric(horizontal: 24),
@@ -33,15 +49,19 @@ class _MyBottomNavState extends State<MyBottomNav> {
                 bottomNavs.length,
                 (index) => GestureDetector(
                       onTap: () {
-                        if (index == 0) {
-                          Navigator.pushNamed(context, '/');
-                        } else if (index == 1) {
+                        if (index == page) {
+                          Navigator.pushNamed(
+                            context,
+                            '/',
+                          );
+                        } else if (index == page) {
                           Navigator.pushNamed(context, "/catagorys");
-                        } else if (index == 2) {
+                        } else if (index == page) {
                           Navigator.pushNamed(context, "/edit_card");
-                        } else if (index == 3) {
+                        } else if (index == page) {
                           Navigator.pushNamed(context, "/setup");
                         }
+
                         bottomNavs[index].input!.change(true);
                         if (bottomNavs[index] != selectedBottomNav) {
                           setState(() {
@@ -56,7 +76,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           AnimatedBar(
-                              isActive: bottomNavs[index] == selectedBottomNav),
+                              isActive: selectedBottomNav == bottomNavs[index]),
                           SizedBox(
                             height: 36,
                             width: 36,
