@@ -96,7 +96,7 @@ class _ContactsState extends State<Contacts> {
                                 ),
                               
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * .055,
+                                width: MediaQuery.of(context).size.width * .075,
                               ),
                               a
                             ],
