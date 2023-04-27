@@ -2,6 +2,7 @@ import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class ResultScreen extends StatelessWidget {
@@ -67,11 +68,10 @@ class ResultScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
                       ),
-                      onPressed: (){
-                        Clipboard.setData(ClipboardData(text: code));
-                      }, 
+                      onPressed: () => launch(
+                         "tel:${code}\$"),
                       child: const Text(
-                    "Save",
+                    "Call Number",
                     style: TextStyle(
                       fontSize: 16,
                       letterSpacing: 1,
