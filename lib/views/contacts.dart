@@ -1,5 +1,6 @@
 import 'package:digital_business_card/model/model.dart';
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/widget/MyAppbar.dart';
 import 'package:digital_business_card/views/widget/language.dart';
@@ -202,7 +203,7 @@ class _ContactsState extends State<Contacts> {
                   ],
                 ),
                 Container(
-                  height: 150.0,
+                  height: 200.0,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: state.Popular_items.length,

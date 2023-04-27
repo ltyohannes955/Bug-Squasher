@@ -1,3 +1,4 @@
+import 'package:digital_business_card/widget/MyBottomNav.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -25,17 +26,22 @@ class _edit_cardState extends State<edit_card> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: IconButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, icon: Icon(Icons.arrow_back, color: blue, size: MediaQuery.of(context).size.width*.045,),),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: blue,
+                      size: MediaQuery.of(context).size.width * .045,
+                    ),
+                  ),
                 )
-                
-                
               ],
             ),
 
@@ -94,14 +100,13 @@ class _edit_cardState extends State<edit_card> {
                             title: const Text('Economics'),
                               value: "Economics", 
                               groupValue: _val,
-                              onChanged: (value){
-                          setState(() {
-                            _val = value!;
-                          });
-                          }
-                         ),
+                              onChanged: (value) {
+                                setState(() {
+                                  _val = value!;
+                                });
+                              }),
                         ),
-                    
+                
                    ],
                  ),
                  Row(
@@ -127,15 +132,12 @@ class _edit_cardState extends State<edit_card> {
                             title: const Text('Medicaine'),
                               value: "Medicaine", 
                               groupValue: _val,
-                              onChanged: (value){
-                          setState(() {
-                            _val = value!;
-                          });
-                           //selected value
-                           }
-                          ),
+                              onChanged: (value) {
+                                setState(() {
+                                  _val = value!;
+                                });
+                              }),
                         ),
-                    
                    ],
                  ),
                  Row(
@@ -161,14 +163,13 @@ class _edit_cardState extends State<edit_card> {
                             title: const Text('Law'),
                               value: "Law", 
                               groupValue: _val,
-                              onChanged: (value){
-                          setState(() {
-                            _val = value!;
-                          });
-                        }
-                       ),
+                              onChanged: (value) {
+                                setState(() {
+                                  _val = value!;
+                                });
+                                //selected value
+                              }),
                         ),
-                    
                    ],
                  ),
                   TextFormField(
