@@ -106,87 +106,90 @@ class _ContactsState extends State<Contacts> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .03,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.13,
-                          height: MediaQuery.of(context).size.width * 0.13,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: const Icon(
-                            Icons.lightbulb,
-                            fill: BorderSide.strokeAlignCenter,
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .03,
-                        ),
-                        b
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.13,
-                          height: MediaQuery.of(context).size.width * 0.13,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: const Icon(
-                            Icons.thumb_up,
-                            fill: BorderSide.strokeAlignCenter,
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .03,
-                        ),
-                        c
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.13,
-                          height: MediaQuery.of(context).size.width * 0.13,
-                          decoration: const BoxDecoration(
-                              boxShadow: [],
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: const Icon(
-                            Icons.share,
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .03,
-                        ),
-                        d
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
                             width: MediaQuery.of(context).size.width * 0.13,
                             height: MediaQuery.of(context).size.width * 0.13,
                             decoration: const BoxDecoration(
                                 color: Colors.white,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-                            child: const Icon(Icons.manage_accounts_sharp)),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .03,
-                        ),
-                        e
-                      ],
-                    ),
-                  ],
+                                    BorderRadius.all(Radius.circular(50))),
+                            child: const Icon(
+                              Icons.lightbulb,
+                              fill: BorderSide.strokeAlignCenter,
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .03,
+                          ),
+                          b
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.13,
+                            height: MediaQuery.of(context).size.width * 0.13,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50))),
+                            child: const Icon(
+                              Icons.thumb_up,
+                              fill: BorderSide.strokeAlignCenter,
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .03,
+                          ),
+                          c
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.13,
+                            height: MediaQuery.of(context).size.width * 0.13,
+                            decoration: const BoxDecoration(
+                                boxShadow: [],
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50))),
+                            child: const Icon(
+                              Icons.share,
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .03,
+                          ),
+                          d
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                              width: MediaQuery.of(context).size.width * 0.13,
+                              height: MediaQuery.of(context).size.width * 0.13,
+                              decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(50))),
+                              child: const Icon(Icons.manage_accounts_sharp)),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .03,
+                          ),
+                          e
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Row(
                   children: [
@@ -225,7 +228,7 @@ class _ContactsState extends State<Contacts> {
                                 width: MediaQuery.of(context).size.width * 0.5,
                                 height:
 
-                                    MediaQuery.of(context).size.height * 0.17,
+                                    MediaQuery.of(context).size.height * 0.2,
 
                               ),
                             ),
