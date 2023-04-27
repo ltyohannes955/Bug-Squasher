@@ -1,12 +1,32 @@
+
 import 'package:flutter/material.dart';
 
 import 'constant/colors.dart';
+
+
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
 class setup extends StatefulWidget {
-  const setup({super.key});
+  setup({super.key});
 
   @override
-  State<setup> createState() => _setupState();
+   State<setup> createState() => _setupState();
 }
+
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signout() {
+    FirebaseAuth.instance.signOut();
+  }
+
 
 class _setupState extends State<setup> {
   int _val = 0;
@@ -47,6 +67,15 @@ class _setupState extends State<setup> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                    padding: const EdgeInsets.fromLTRB(10,10,0,0),
+                    child: Text('Full Name:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
+                  ), 
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Full Nmae",
+                    ),
+                  ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10,10,0,0),
                       child: Text('Work Area', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
@@ -204,6 +233,7 @@ class _setupState extends State<setup> {
               )
             ],
           ),
+
       ),
     );
   }

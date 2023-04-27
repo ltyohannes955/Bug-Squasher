@@ -95,11 +95,10 @@ class _introPageState extends State<introPage> {
                   fixedSize: Size(MediaQuery.of(context) .size.width*.455, MediaQuery.of(context).size.height * .075, ),
                     primary: Color.fromARGB(255, 1, 11, 102),
                      
-  shape: 
-    RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(18.0),
-      
-    )
+                    shape: 
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    )
                 
 
                     ),

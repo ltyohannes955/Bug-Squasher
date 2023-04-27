@@ -1,4 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/setup.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import 'constant/text.dart';
 
@@ -14,19 +17,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: '#2B5B80'.toColor(),
-        appBar: AppBar(
-          backgroundColor: '#2B5B80'.toColor(),
-          elevation: 25,
-          foregroundColor: Colors.white,
-          title: const Text("Digital Business Card"),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: const Icon(Icons.account_circle_outlined))
-          ],
-        ),
+        appBar: MyAppbar(),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -40,7 +31,6 @@ class _ContactsState extends State<Contacts> {
             ),
             Card(
               elevation: 25,
-              color: '#FAF9F6'.toColor(),
               child: Column(
                 children: [
                   Container(
@@ -50,7 +40,7 @@ class _ContactsState extends State<Contacts> {
                     child: Row(
                       children: [
                         Image.asset(
-                          "lib/asset/jj.jpg",
+                          "assets/a.jpg",
                           fit: BoxFit.cover,
                           height: 200,
                           width: 130,
@@ -90,16 +80,31 @@ class _ContactsState extends State<Contacts> {
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
                     Icons.thumb_up,
+                    fill: BorderSide.strokeAlignCenter,
                   ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.1,
                   decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 95, 92, 92),
+                          blurRadius: 0,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Icon(
@@ -110,6 +115,13 @@ class _ContactsState extends State<Contacts> {
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.width * 0.1,
                     decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 95, 92, 92),
+                            blurRadius: 0,
+                            spreadRadius: 2,
+                          ),
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: const Icon(Icons.manage_accounts_sharp)),
@@ -133,11 +145,10 @@ class _ContactsState extends State<Contacts> {
                   itemBuilder: (context, index) {
                     return Card(
                       elevation: 25,
-                      color: '#91ABC2'.toColor(),
                       child: Container(
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("lib/asset/jj.jpg"),
+                              image: AssetImage("assets/a.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius:
@@ -150,22 +161,7 @@ class _ContactsState extends State<Contacts> {
             )
           ],
         )),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: '#5E718B'.toColor(),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: '',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-                backgroundColor: Colors.purple)
-          ],
-        ));
+         drawer: MyDrawer(),
+      );
   }
 }

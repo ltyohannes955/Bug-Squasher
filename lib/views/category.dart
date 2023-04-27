@@ -1,3 +1,6 @@
+import 'package:digital_business_card/views/constant/colors.dart';
+import 'package:digital_business_card/views/widget/MyAppbar.dart';
+import 'package:digital_business_card/views/widget/MyDrawer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -10,31 +13,7 @@ class Category extends StatelessWidget {
       right: true,
       left: true,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(248, 10, 17, 121),
-          title: const Text(
-            'DBC',
-            style: TextStyle(
-                fontSize: 31.09,
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontWeight: FontWeight.w700,
-                fontStyle: FontStyle.normal),
-          ),
-          centerTitle: true,
-          actions: [
-            Container(
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: const Icon(
-                  Icons.account_circle_outlined,
-                  size: 33,
-                ),
-              ),
-            )
-          ],
-        ),
+        appBar: MyAppbar(),
         body: Column(children: [
           Expanded(
               flex: 5,
@@ -87,23 +66,8 @@ class Category extends StatelessWidget {
                   );
                 }),
           ),
-          BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                label: "Scanner",
-                icon: Icon(Icons.qr_code_scanner),
-              ),
-              BottomNavigationBarItem(
-                label: "Categories",
-                icon: Icon(Icons.book),
-              ),
-              BottomNavigationBarItem(
-                label: "Qr Codes",
-                icon: Icon(Icons.qr_code),
-              ),
-            ],
-          )
         ]),
+        drawer: MyDrawer(),
       ),
     );
   }
