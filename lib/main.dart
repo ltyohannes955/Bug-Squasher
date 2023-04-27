@@ -8,6 +8,7 @@ import 'package:digital_business_card/views/edit_card.dart';
 import 'package:digital_business_card/views/login.dart';
 import 'package:digital_business_card/views/personal.dart';
 import 'package:digital_business_card/views/profile.dart';
+import 'package:digital_business_card/views/qr_scanner.dart';
 import 'package:digital_business_card/views/setup.dart';
 import 'package:digital_business_card/views/signUp.dart';
 import 'package:flutter/material.dart';
