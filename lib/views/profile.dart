@@ -91,7 +91,7 @@ class _profileState extends State<profile> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white
                     ),
-                     child: Text("Add Card", style: TextStyle(color: '#2B5B80'.toColor()),)),
+                     child: LocaleText("add_card", style: TextStyle(color: '#2B5B80'.toColor()),)),
                   );
                 }
                 return Column(

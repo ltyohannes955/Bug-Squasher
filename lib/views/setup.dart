@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 import '../model/business_card.dart';
 import 'constant/colors.dart';
@@ -70,16 +71,16 @@ class _setupState extends State<setup> {
                         onPressed: () {
                           Navigator.pushNamed(context, '/MybottomNav');
                         },
-                        child: const Text(
-                          "SKIP",
+                        child: const LocaleText(
+                          "skip",
                           style:
                               TextStyle(color: blue, fontWeight: FontWeight.bold),
                         )),
                   )
                 ],
               ),
-              Text(
-                'SET UP',
+              LocaleText(
+                'set_up',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: blue,
@@ -95,14 +96,14 @@ class _setupState extends State<setup> {
                     children: [
                       TextFormField(
                         controller: _FullController,
-                        decoration: const InputDecoration(
-                          labelText: "Full Name",
+                        decoration: InputDecoration(
+                          labelText: Locales.string(context,'phone_no'),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
-                        child: Text(
-                          'Work Area',
+                        child: LocaleText(
+                          'work_area',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: MediaQuery.of(context).size.width * .035),
@@ -114,7 +115,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('Enggineering'),
+                                title: const LocaleText('engineering'),
                                 value: 'Enggineering',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -126,7 +127,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('Economics'),
+                                title: const LocaleText('economics'),
                                 value: 'Economics',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -143,7 +144,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('tech'),
+                                title: const LocaleText('tech'),
                                 value: 'tech',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -156,7 +157,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('Medicaine'),
+                                title: const LocaleText('mediceine'),
                                 value: 'Medicaine',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -174,7 +175,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('Psychology'),
+                                title: const LocaleText('psychology'),
                                 value: 'Psychology',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -187,7 +188,7 @@ class _setupState extends State<setup> {
                           Expanded(
                             child: RadioListTile(
                                 activeColor: blue,
-                                title: const Text('Law'),
+                                title: const LocaleText('law'),
                                 value: 'Law',
                                 groupValue: _val,
                                 onChanged: (value) {
@@ -200,26 +201,26 @@ class _setupState extends State<setup> {
                       ),
                       TextFormField(
                         controller: _emailcontroller,
-                        decoration: const InputDecoration(
-                          labelText: "Email",
+                        decoration:  InputDecoration(
+                          labelText: Locales.string(context,'email'),
                         ),
                       ),
                       TextFormField(
                         controller: _phoneNOAreaController,
-                        decoration: const InputDecoration(
-                          labelText: "Phone NO",
+                        decoration: InputDecoration(
+                          labelText: Locales.string(context,'phone_no'),
                         ),
                       ),
                       TextFormField(
                         controller: _jobcontroller,
-                        decoration: const InputDecoration(
-                          labelText: "Job Type",
+                        decoration:  InputDecoration(
+                          labelText: Locales.string(context,'job_type'),
                         ),
                       ),
                       TextFormField(
                         controller: _companycontroller,
-                        decoration: const InputDecoration(
-                          labelText: "Company",
+                        decoration:  InputDecoration(
+                          labelText: Locales.string(context,'company'),
                         ),
                       ),
                       Padding(
@@ -250,8 +251,8 @@ class _setupState extends State<setup> {
                             style: ElevatedButton.styleFrom(
                               primary: blue,
                             ),
-                            child: Text(
-                              "Submit",
+                            child: LocaleText(
+                              "submit",
                               style: TextStyle(
                                   fontSize:
                                       MediaQuery.of(context).size.width * .035),

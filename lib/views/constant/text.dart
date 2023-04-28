@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 const Text a = Text(
 
@@ -13,28 +14,24 @@ are,with anyone,wherever you go.
   style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600),
 );
 
-const Text b = Text(
-  '''Creative
-''',
+const Text b = LocaleText(
+  'creative',
   style:
       TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
 
-const Text c = Text(
-  '''Admired
-''',
+const Text c = LocaleText(
+  'admired',
   style:
       TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
-const Text d = Text(
-  '''   Shareable     
-''',
+const Text d = LocaleText(
+  'shareable',
   style:
       TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );
-const Text e = Text(
-  '''   Modifiable
-    ''',
+const Text e = LocaleText(
+  'modifiable',
   style:
       TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold),
 );

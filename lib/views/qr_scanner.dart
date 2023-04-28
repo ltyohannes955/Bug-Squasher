@@ -1,6 +1,7 @@
 import 'package:digital_business_card/views/constant/colors.dart';
 import 'package:digital_business_card/views/result_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 
@@ -37,8 +38,8 @@ class _QRScannerState extends State<QRScanner> {
         ],
         iconTheme: const IconThemeData(color: Colors.black87),
         centerTitle: true,
-        title: const Text(
-                    "QR Scanner",
+        title: const LocaleText(
+                    "qr_scanner",
                     style: TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.bold,
@@ -55,8 +56,8 @@ class _QRScannerState extends State<QRScanner> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text(
-                    "Place your QR coode in this area.",
+                  LocaleText(
+                    "place_your_QR_code_in_this_area",
                     style: TextStyle(
                       color: Colors.black87,
                       fontSize: 18,
@@ -67,8 +68,8 @@ class _QRScannerState extends State<QRScanner> {
                     SizedBox(
                       height: 10,
                     ),
-                  Text(
-                    "Scanning will be started automatically.",
+                  LocaleText(
+                    "scanning_will_start_automatically",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black54,
@@ -107,10 +108,11 @@ class _QRScannerState extends State<QRScanner> {
               child: Container(
                 alignment: Alignment.center,
                 child: const Text(
-                    "D.B.C",
+                    "DBC",
                     style: TextStyle(
                       color: Colors.black87,
                       fontSize: 14,
+                      fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
                     ),

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
 import '../model/business_card.dart';
 import 'constant/colors.dart';
@@ -49,7 +50,7 @@ class _edit_cardState extends State<edit_card> {
                 ],
               ),
         
-              Text('EDIT PROFILE', style: TextStyle(fontWeight: FontWeight.bold, color: blue, fontSize: MediaQuery.of(context).size.width*.075),),
+              LocaleText('edit_profile', style: TextStyle(fontWeight: FontWeight.bold, color: blue, fontSize: MediaQuery.of(context).size.width*.075),),
         
                Container(
                 width: MediaQuery.of(context).size.width*.9,
@@ -62,12 +63,12 @@ class _edit_cardState extends State<edit_card> {
                     TextFormField(
                       controller: _FullController,
                       decoration: InputDecoration(
-                        labelText: "Full Name"
+                        labelText:  Locales.string(context,'full_name'),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10,10,0,0),
-                      child: Text('Work Area', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
+                      child: LocaleText('work_area', style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width*.035),),
                     ),
         
                    Row(
@@ -76,7 +77,7 @@ class _edit_cardState extends State<edit_card> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: const Text('Engineering'),
+                            title: LocaleText('engineering'),
                               value: "Engineering", 
                               groupValue: _val,
                               onChanged: (value){
@@ -89,7 +90,7 @@ class _edit_cardState extends State<edit_card> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: const Text('Economics'),
+                              title: const LocaleText('economics'),
                                 value: "Economics", 
                                 groupValue: _val,
                                 onChanged: (value){
@@ -108,7 +109,7 @@ class _edit_cardState extends State<edit_card> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: const Text('tech'),
+                            title: const LocaleText('tech'),
                               value: "tech", 
                               groupValue: _val,
                               onChanged: (value){
@@ -122,7 +123,7 @@ class _edit_cardState extends State<edit_card> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: const Text('Medicaine'),
+                              title: const LocaleText('mediceine'),
                                 value: "Medicaine", 
                                 groupValue: _val,
                                 onChanged: (value){
@@ -142,7 +143,7 @@ class _edit_cardState extends State<edit_card> {
                        Expanded(
                          child: RadioListTile(
                           activeColor: blue,
-                            title: const Text('Psychology'),
+                            title: const LocaleText('psychology'),
                               value: "Psychology", 
                               groupValue: _val,
                               onChanged: (value){
@@ -156,7 +157,7 @@ class _edit_cardState extends State<edit_card> {
                           Expanded(
                             child: RadioListTile(
                               activeColor: blue,
-                              title: const Text('Law'),
+                              title: const LocaleText('law'),
                                 value: "Law", 
                                 groupValue: _val,
                                 onChanged: (value){
@@ -171,26 +172,26 @@ class _edit_cardState extends State<edit_card> {
                    ),
                     TextFormField(
                       controller: _emailcontroller,
-                      decoration: const InputDecoration(
-                        labelText: "Email",
+                      decoration:  InputDecoration(
+                        labelText:  Locales.string(context,'email'),
                       ),
                     ),
                     TextField(
                       controller: _phoneNOAreaController,
-                      decoration: const InputDecoration(
-                        labelText: "Phone NO",
+                      decoration:  InputDecoration(
+                        labelText:  Locales.string(context,'phone_no'),
                       ),
                     ),
                     TextFormField(
                       controller: _jobcontroller,
-                      decoration: const InputDecoration(
-                        labelText: "Jobe Type",
+                      decoration:  InputDecoration(
+                        labelText:  Locales.string(context,'job_type'),
                       ),
                     ),
                     TextFormField(
                       controller: _companycontroller,
-                      decoration: const InputDecoration(
-                        labelText: "Company",
+                      decoration:  InputDecoration(
+                        labelText:  Locales.string(context,'company'),
                       ),
                     ),
                     Padding(
@@ -215,7 +216,7 @@ class _edit_cardState extends State<edit_card> {
                           primary: blue,
                           
                         ), 
-                        child: Text("Submit", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.035),)),
+                        child: LocaleText("submit", style: TextStyle(fontSize: MediaQuery.of(context).size.width*.035),)),
                       ),
                     
                 
