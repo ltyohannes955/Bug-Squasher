@@ -42,7 +42,7 @@ class _profileState extends State<profile> {
                 padding: const EdgeInsets.all(15.0),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, "/MybottomNav");
                   },
                   icon: Icon(
                     Icons.arrow_back,
