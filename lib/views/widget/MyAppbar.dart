@@ -30,14 +30,17 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
                   child: LocaleText("language", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),),
                 )
               ),
-              Container(
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/qr_code');
-                  },
-                  icon: const Icon(
-                    Icons.qr_code_scanner,
-                    size: 33,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/Qrcode');
+                    },
+                    icon: const Icon(
+                      Icons.qr_code_scanner,
+                      size: 33,
+                    ),
                   ),
                 ),
               )
